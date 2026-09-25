@@ -1,7 +1,7 @@
 # llm-posttraining
 
 SFT + **hand-rolled DPO + hand-rolled GRPO** on a small open LM, on the
-behavior this portfolio cares most about: **answering when the evidence
+behavior this portfolio is built around: **answering when the evidence
 supports it and abstaining instead of fabricating when it does not**.
 Each stage is measured before and after on held-out entities.
 
@@ -28,7 +28,7 @@ CPU-trainable).
   *collapsed* DPO checkpoint as a repair attempt.
   One gradient step per rollout batch (on-policy, ratio=1, no clip
   needed), teacher-forced seq logprobs.
-- **Eval**: greedy decode; each response classified `correct` (entity +
+- **Eval**: greedy decode. Each response classified `correct` (entity +
   gold value, word-boundary), `abstains`, or `fabricates`, per stage,
   on entities never seen in training.
 
@@ -61,7 +61,7 @@ The RL result, and the subtler one underneath:
 - **The prerequisite finding:** binary +1/-1 rewards produce *no gradient
   at all* when a policy saturates. On the saturated SFT policy every
   rollout in a group scores +1 (verified: probe batches at the run's
-  temperature give all-uniform groups, zero advantage); on the collapsed
+  temperature give all-uniform groups, zero advantage). On the collapsed
   DPO policy most groups are uniform because degenerate repeats score
   identically, with only occasional splits on answerable prompts. Zero
   variance -> zero advantage -> zero gradient. The shaped middle tier
@@ -69,7 +69,7 @@ The RL result, and the subtler one underneath:
   is what creates usable variance at the operating temperature. Even so,
   52/60 steps still skipped. (Measured caveat: raising temperature
   restores variance too, and a T=2.5 probe produces mixed groups on both
-  checkpoints. Shaping is not the *only* fix; it is the one that
+  checkpoints. Shaping is not the *only* fix. It is the one that
   works without degrading rollout quality.)
 
 Two measured ablations (`results/grpo_ablations.json`):
@@ -77,7 +77,7 @@ Two measured ablations (`results/grpo_ablations.json`):
 - **Seed replication**: a second GRPO repair with a different rollout
   seed (s105) lands the identical held-out result, 98.75% correct /
   100% abstains, from 10 gradient steps (50 skipped). The repair
-  replicates; it isn't a lucky roll.
+  replicates. It isn't a lucky roll.
 - **SFT-init**: the same shaped GRPO from the *healthy* SFT checkpoint
   does nothing: 60/60 steps skipped, every rollout scores 1.0,
   and the output checkpoint is bit-identical to the input (verified).
@@ -97,16 +97,16 @@ Two eval-iteration artifacts are kept visible:
 
 ## Caveats
 
-- The task is templated synthetic; it demonstrates post-training mechanics
+- The task is templated synthetic, and it demonstrates post-training mechanics
   and measured behavior change, not a real-domain capability.
-- One model size, one seed, greedy decode; no beta sweep, no KL tracking.
+- One model size, one seed, greedy decode. No beta sweep, no KL tracking.
 - GRPO ran 60 steps at one shaped-reward scheme, one temperature, one
   KL coefficient. Two ablations landed (a second rollout seed, identical
   result; an SFT-init run, provably inert). Still open: temperature and
   KL sweeps, and reward-scheme variants.
 - The 135M base is very small. Part of the instability is capacity;
   a slightly larger base or KL-annealed schedule is the next knob.
-- DPO pair construction is idealized (clean chosen/rejected); real
+- DPO pair construction is idealized (clean chosen/rejected). Real
   preference data is noisier and would likely destabilize further.
 - SFT run-to-run variance exists on CPU (nondeterministic reductions):
   an earlier run collapsed to always-abstain at the same seed.
