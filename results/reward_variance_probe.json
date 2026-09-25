@@ -1,0 +1,44 @@
+{
+  "kind": "reward_variance_probe_v1",
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "n_samples_per_prompt": 6,
+  "shaped_reward": true,
+  "prompts": 48,
+  "seed": 5,
+  "checkpoints": {
+    "sft": {
+      "path": "data/processed/sft.pt",
+      "sha256": "39d2bf9d0bcce65f342394078f4edea05cad6e7cd724cde068445202a6a8be72"
+    },
+    "dpo": {
+      "path": "data/processed/dpo.pt",
+      "sha256": "6b1143f5cc325311ce3be8f4236103d65b091f8a2ab236bcc46e4e69349cf61d"
+    }
+  },
+  "cells": {
+    "sft@T=1.0": {
+      "groups": 48,
+      "groups_with_variance": 0,
+      "mean_reward": 1.0,
+      "max_abs_advantage": 0.0
+    },
+    "sft@T=2.5": {
+      "groups": 48,
+      "groups_with_variance": 43,
+      "mean_reward": 0.5868055820465088,
+      "max_abs_advantage": 2.236064910888672
+    },
+    "dpo@T=1.0": {
+      "groups": 48,
+      "groups_with_variance": 6,
+      "mean_reward": 0.3402777910232544,
+      "max_abs_advantage": 2.2360618114471436
+    },
+    "dpo@T=2.5": {
+      "groups": 48,
+      "groups_with_variance": 32,
+      "mean_reward": 0.0694444477558136,
+      "max_abs_advantage": 2.236064910888672
+    }
+  }
+}

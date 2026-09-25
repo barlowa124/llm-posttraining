@@ -69,8 +69,9 @@ The RL result, and the subtler one underneath:
   is what creates usable variance at the operating temperature. Even so,
   52/60 steps still skipped. (Measured caveat: raising temperature
   restores variance too, and a T=2.5 probe produces mixed groups on both
-  checkpoints. Shaping is not the *only* fix. It is the one that
-  works without degrading rollout quality.)
+  checkpoints — `results/reward_variance_probe.json`, produced by
+  `python -m posttrain.probe_variance`. Shaping is not the *only* fix.
+  It is the one that works without degrading rollout quality.)
 
 Two measured ablations (`results/grpo_ablations.json`):
 
