@@ -184,7 +184,7 @@ def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str):
         )
         if step % 10 == 0 or step == g["steps"] - 1:
             print(f"grpo step {step}: mean_reward={rewards.mean():.3f} "
-                  f"loss={float(loss):.4f}")
+                  f"loss={loss.item():.4f}")
 
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     torch.save(policy.state_dict(), out_path)

@@ -1,6 +1,6 @@
 {
-  "created_utc": "2026-09-25T15:14:23.306288+00:00",
-  "git": "c50a524204+dirty",
+  "created_utc": "2026-09-25T15:16:18.424087+00:00",
+  "git": "3c737a72fd",
   "versions": {
     "torch": "2.8.0",
     "transformers": "4.57.6",
