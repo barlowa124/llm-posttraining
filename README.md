@@ -39,8 +39,11 @@ CPU-trainable).
 | base | 100% "correct" (parroting context) | 100% fabricates | copies when it can, invents when it can't |
 | SFT | 100% correct | 100% abstains | solves the task cleanly |
 | DPO (lr 1e-4) | 55% correct, 31% abstains | 5% abstains, **95% degenerate** | train pref-acc 1.0, deployed behavior collapses |
-| DPO (lr 1e-5) | 0% correct — abstains all | 86% abstains | collapses the *other* way |
+| DPO (lr 1e-5) † | 0% correct — abstains all | 86% abstains | collapses the *other* way |
 | **GRPO (shaped, from collapsed DPO)** | **98.75% correct** | **100% abstains** | RL *repairs* the collapse |
+
+† manual variant eval — in `results/responses_dpo_lr1e5.csv`, not the DAG's
+`summary.json`.
 
 The DPO headline is a negative result, measured properly: **preference
 accuracy on training pairs does not predict deployed behavior.** Both DPO
@@ -56,13 +59,18 @@ Then the RL result, and the subtler one underneath it:
   within-group reward variance and were skipped). KL-to-SFT is part of
   the repair mechanism; the recovery is not attributable to reward alone.
 - **The prerequisite finding:** binary +1/-1 rewards produce *no gradient
-  at all* in either regime. On the saturated SFT policy every rollout in
-  a group scores +1; on the collapsed DPO policy every rollout scores -1
-  (even at temperature 2.5). Zero variance -> zero advantage -> zero
-  gradient. The shaped middle tier (partial credit for naming the entity
-  or emitting an abstain fragment) is what creates the variance RL needs.
-  Reward shaping isn't decoration here — it's the difference between RL
-  doing nothing and RL working.
+  at all* when a policy saturates. On the saturated SFT policy every
+  rollout in a group scores +1 (verified: probe batches at the run's
+  temperature give all-uniform groups, zero advantage); on the collapsed
+  DPO policy most groups are uniform — degenerate repeats score
+  identically — with only occasional splits on answerable prompts. Zero
+  variance -> zero advantage -> zero gradient. The shaped middle tier
+  (partial credit for naming the entity or emitting an abstain fragment)
+  is what creates usable variance at the operating temperature: even so,
+  52/60 steps still skipped. (Measured caveat: raising temperature also
+  restores variance — a T=2.5 probe produces mixed groups on both
+  checkpoints — so shaping is not the *only* fix; it is the one that
+  works without degrading rollout quality.)
 
 Two eval-iteration artifacts are kept visible:
 
