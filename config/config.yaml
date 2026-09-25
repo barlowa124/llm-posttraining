@@ -1,0 +1,26 @@
+# SFT -> DPO post-training of a small LM on a synthetic abstention task.
+# The measured claim: after post-training the model answers when the
+# context supports it and abstains instead of fabricating when it does not.
+
+model:
+  name: "HuggingFaceTB/SmolLM2-135M"   # base model, CPU-trainable
+  max_len: 160
+  lr_sft: 0.0002
+  lr_dpo: 0.0001
+  sft_epochs: 3
+  dpo_epochs: 2
+  batch_size: 8
+  beta: 0.1          # DPO KL-strength to the frozen SFT reference
+  seed: 5
+
+data:
+  n_entities: 400         # templated pharmacology facts
+  n_answerable_per_entity: 2
+  n_unanswerable_train: 400
+  n_dpo_pairs: 400
+  heldout_entities: 80    # eval entities never seen in training
+  seed: 5
+
+evaluation:
+  n_answerable: 160
+  n_unanswerable: 160

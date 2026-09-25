@@ -1,0 +1,25 @@
+[project]
+name = "llm-posttraining"
+version = "0.1.0"
+description = "SFT + hand-rolled DPO on a small LM: abstention-vs-fabrication behavior, measured before/after"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "torch",
+    "transformers",
+    "pyyaml",
+    "snakemake",
+    "pulp<3",  # snakemake 7.x calls pulp.list_solvers (removed in pulp 3.x)
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

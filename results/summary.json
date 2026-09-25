@@ -1,0 +1,66 @@
+{
+  "base": {
+    "answerable": {
+      "n": 80,
+      "correct": 1.0,
+      "abstains": 0.0,
+      "degenerate": 0.0,
+      "fabricates": 0.0
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.0,
+      "degenerate": 0.0,
+      "fabricates": 1.0
+    }
+  },
+  "sft": {
+    "answerable": {
+      "n": 80,
+      "correct": 1.0,
+      "abstains": 0.0,
+      "degenerate": 0.0,
+      "fabricates": 0.0
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 1.0,
+      "degenerate": 0.0,
+      "fabricates": 0.0
+    }
+  },
+  "dpo": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.55,
+      "abstains": 0.3125,
+      "degenerate": 0.025,
+      "fabricates": 0.1125
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.05,
+      "degenerate": 0.95,
+      "fabricates": 0.0
+    }
+  },
+  "dpo_lr1e5": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 1.0,
+      "degenerate": 0.0,
+      "fabricates": 0.0
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.8625,
+      "degenerate": 0.1375,
+      "fabricates": 0.0
+    }
+  }
+}
