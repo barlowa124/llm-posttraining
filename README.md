@@ -126,6 +126,11 @@ regenerable and gitignored.
 
 ## Publishing checkpoints
 
+Published at
+[huggingface.co/barlowa/smollm2-135m-abstention-posttrain](https://huggingface.co/barlowa/smollm2-135m-abstention-posttrain)
+— six checkpoint dirs (`sft/`, `dpo/`, `grpo/` + ablations) loadable via
+`AutoModelForCausalLM.from_pretrained(repo, subfolder="sft")`.
+
 `hf/` contains the HuggingFace packaging: `MODEL_CARD.md` plus
 `upload_hf.py`, which converts each `data/processed/*.pt` into a
 self-contained safetensors model dir (`<repo>/<stage>/`) and uploads the
