@@ -122,3 +122,18 @@ PYTHONPATH=src .venv/bin/python -m pytest tests/ -q
 `results/summary.json` (per-stage rates), `results/responses_*.csv`
 (inspectable raw generations), `results/provenance.json`. Checkpoints are
 regenerable and gitignored.
+
+## Publishing checkpoints
+
+`hf/` contains the HuggingFace packaging: `MODEL_CARD.md` plus
+`upload_hf.py`, which converts each `data/processed/*.pt` into a
+self-contained safetensors model dir (`<repo>/<stage>/`) and uploads the
+repo. All six checkpoints stage by default with `--include-ablations`
+(the collapsed `dpo/` checkpoint ships deliberately — it is the failure
+artifact the card documents).
+
+```bash
+HF_TOKEN=hf_... PYTHONPATH=src .venv/bin/python hf/upload_hf.py \
+    --repo <user>/smollm2-135m-abstention-posttrain --include-ablations
+# --dry-run stages locally under data/processed/hf_repo/ without pushing
+```
