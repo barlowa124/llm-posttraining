@@ -39,7 +39,7 @@ CPU-trainable).
 | base | 100% "correct" (parroting context) | 100% fabricates | copies when it can, invents when it can't |
 | SFT | 100% correct | 100% abstains | solves the task cleanly |
 | DPO (lr 1e-4) | 55% correct, 31% abstains | 5% abstains, **95% degenerate** | train pref-acc 1.0, deployed behavior collapses |
-| DPO (lr 1e-5) † | 0% correct — abstains all | 86% abstains | collapses the *other* way |
+| DPO (lr 1e-5) † | 0% correct, abstains all | 86% abstains | collapses the *other* way |
 | **GRPO (shaped, from collapsed DPO)** | **98.75% correct** | **100% abstains** | RL *repairs* the collapse |
 
 † manual variant eval, in `results/responses_dpo_lr1e5.csv`, not the DAG's
