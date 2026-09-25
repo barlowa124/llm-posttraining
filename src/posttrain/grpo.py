@@ -1,7 +1,7 @@
 """GRPO-style RL post-training, hand-rolled like the DPO objective.
 
 Per step: sample `prompts_per_step` prompts, generate `n_samples` rollouts
-each (temperature sampling — the group is the point), score every rollout
+each (temperature sampling; the group is the point), score every rollout
 with the *eval classifier* as the reward, and take a policy-gradient step
 on the group-relative advantage:
 
@@ -18,9 +18,9 @@ seq-level teacher-forced logprobs, k1-style KL estimate. Rewards:
 
 Binary +1/-1 rewards carry no signal in either failure regime observed
 here: a saturated policy scores +1 on every rollout and a collapsed one
-scores -1 on every rollout — both give zero group advantage. The shaped
+scores -1 on every rollout. Both give zero group advantage. The shaped
 middle tier is what creates reward variance for RL to exploit. The reward
-deliberately reuses `evaluate.classify` plus two partial-credit checks —
+reuses `evaluate.classify` plus two partial-credit checks, so
 the loop optimizes the exact metric that is reported, on train entities.
 """
 
@@ -192,7 +192,7 @@ def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str,
     torch.save(policy.state_dict(), out_path)
     log = pd.DataFrame(hist)
     log.to_csv(str(Path(out_path).with_suffix(".log.csv")), index=False)
-    # no-signal steps are evidence for the reward-variance finding — keep
+    # no-signal steps are evidence for the reward-variance finding. Keep
     # the log in results/ where it gets committed
     Path("results").mkdir(exist_ok=True)
     stem = Path(out_path).stem

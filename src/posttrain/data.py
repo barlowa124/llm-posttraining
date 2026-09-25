@@ -2,7 +2,7 @@
 
 Templated pharmacology-style facts over invented entity names (so the
 held-out entity split is a true generalization test, not memorization).
-The task is deliberately synthetic — what is being demonstrated is the
+The task is synthetic by design. What is being demonstrated is the
 post-training *mechanics* and measured behavior change, not a new dataset.
 
 Each example: context + question + completion. Answerable examples place
@@ -122,7 +122,7 @@ def build_dpo_pairs(df: pd.DataFrame, cfg) -> pd.DataFrame:
 def build_rl(cfg, train: pd.DataFrame) -> pd.DataFrame:
     """RL prompt pool: train entities only, with gold_value for the reward.
 
-    The reward function is the eval classifier itself — the loop optimizes
+    The reward function is the eval classifier itself. The loop optimizes
     exactly the behavior metric that gets reported, on entities disjoint
     from the eval split.
     """

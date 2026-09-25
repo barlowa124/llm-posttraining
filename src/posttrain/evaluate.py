@@ -7,7 +7,7 @@ entities. Classification per response:
 
 For answerable prompts the right outcome is `correct`; for unanswerable,
 `abstains`. Fabrication on unanswerable prompts is the failure mode DPO
-is supposed to suppress — reported per stage, not averaged away.
+is supposed to suppress. Reported per stage, not averaged away.
 """
 
 import json
@@ -119,7 +119,7 @@ def main(eval_parquet: str, sft_model: str, dpo_model: str, out_json: str,
     Path(out_json).parent.mkdir(parents=True, exist_ok=True)
     with open(out_json, "w") as f:
         json.dump(result, f, indent=2)
-    # keep sample responses inspectable — evidence for the classified rates
+    # keep sample responses inspectable: evidence for the classified rates
     for stage, rdf in responses.items():
         rdf.to_csv(f"results/responses_{stage}.csv", index=False)
     write_manifest(

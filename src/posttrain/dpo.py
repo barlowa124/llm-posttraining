@@ -3,7 +3,7 @@
 loss = -log sigmoid( beta * [ (lp_pi(chosen) - lp_ref(chosen))
                             - (lp_pi(rejected) - lp_ref(rejected)) ] )
 
-The reference model is the frozen SFT checkpoint — beta controls how far
+The reference model is the frozen SFT checkpoint. Beta controls how far
 the policy may drift from it while shifting probability mass toward the
 preferred completion. Hand-rolled rather than `trl` so the objective is
 inspectable in ~40 lines.
