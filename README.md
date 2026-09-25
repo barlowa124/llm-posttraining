@@ -45,7 +45,7 @@ CPU-trainable).
 † manual variant eval, in `results/responses_dpo_lr1e5.csv`, not the DAG's
 `summary.json`.
 
-The DPO headline is a negative result, measured properly: **preference
+The DPO headline is a negative result: **preference
 accuracy on training pairs does not predict deployed behavior.** Both DPO
 variants hit 100% preference accuracy on the training pairs while
 destabilizing the held-out policy in *opposite* directions: repetition
@@ -93,7 +93,7 @@ Two eval-iteration artifacts are kept visible:
   entity + gold value with word boundaries, and repetition collapse is its
   own `degenerate` label separate from semantic fabrication.
 - Raw generations are preserved (`results/responses_*.csv`) so every rate
-  in the table traces to actual model output.
+  in the table traces to model output.
 
 ## Caveats
 
@@ -104,8 +104,8 @@ Two eval-iteration artifacts are kept visible:
   KL coefficient. Two ablations landed (a second rollout seed, identical
   result; an SFT-init run, provably inert). Still open: temperature and
   KL sweeps, and reward-scheme variants.
-- The 135M base is very small. Part of the instability is capacity;
-  a slightly larger base or KL-annealed schedule is the next knob.
+- The 135M base is very small. Part of the instability is capacity.
+  A slightly larger base or KL-annealed schedule is the next knob.
 - DPO pair construction is idealized (clean chosen/rejected). Real
   preference data is noisier and would likely destabilize further.
 - SFT run-to-run variance exists on CPU (nondeterministic reductions):
