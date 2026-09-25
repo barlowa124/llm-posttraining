@@ -72,6 +72,20 @@ Then the RL result, and the subtler one underneath it:
   checkpoints — so shaping is not the *only* fix; it is the one that
   works without degrading rollout quality.)
 
+Two ablations, run rather than assumed (`results/grpo_ablations.json`):
+
+- **Seed replication**: a second GRPO repair with a different rollout
+  seed (s105) lands the identical held-out result — 98.75% correct /
+  100% abstains — from 10 gradient steps (50 skipped). The repair
+  replicates; it isn't a lucky roll.
+- **SFT-init**: the same shaped GRPO from the *healthy* SFT checkpoint
+  does literally nothing — 60/60 steps skipped, every rollout scores 1.0,
+  and the output checkpoint is bit-identical to the input (verified).
+  The shaped middle tier creates variance only in the *middle* competence
+  regime: a policy that already maximizes the rubric has no gradient to
+  find. The zero-signal finding cuts both ways — RL can't hurt this
+  policy, but only because it can't touch it at all.
+
 Two eval-iteration artifacts are kept visible:
 
 - The first classifier required the full gold sentence as substring and
@@ -87,8 +101,9 @@ Two eval-iteration artifacts are kept visible:
   and measured behavior change, not a real-domain capability.
 - One model size, one seed, greedy decode; no beta sweep, no KL tracking.
 - GRPO ran 60 steps at one shaped-reward scheme, one temperature, one
-  init. The repair result is real but not ablated — per-seed variance and
-  the KL-vs-reward attribution are open questions, documented as such.
+  KL coefficient. Two ablations landed (a second rollout seed — identical
+  result; an SFT-init run — provably inert). Still open: temperature and
+  KL sweeps, and reward-scheme variants.
 - The 135M base is very small — part of the instability is capacity;
   a slightly larger base or KL-annealed schedule is the next honest knob.
 - DPO pair construction is idealized (clean chosen/rejected); real

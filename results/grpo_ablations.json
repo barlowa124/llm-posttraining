@@ -1,0 +1,34 @@
+{
+  "grpo_s105": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.9875,
+      "abstains": 0.0,
+      "degenerate": 0.0125,
+      "fabricates": 0.0
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 1.0,
+      "degenerate": 0.0,
+      "fabricates": 0.0
+    }
+  },
+  "grpo_s5": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.9875,
+      "abstains": 0.0,
+      "degenerate": 0.0125,
+      "fabricates": 0.0
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 1.0,
+      "degenerate": 0.0,
+      "fabricates": 0.0
+    }
+  }
+}

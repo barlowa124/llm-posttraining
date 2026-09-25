@@ -109,17 +109,19 @@ def completion_logp(model, tok, prompts_flat, gen_ids, max_len, pad_id):
     return (tok_lp * mask).sum(dim=1) / denom  # per-completion mean logp
 
 
-def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str):
+def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str,
+               seed_offset: int = 0):
     """GRPO from `init_ckpt`, with KL measured against `ref_ckpt`.
 
     The wiring is the Snakefile's: init = DPO checkpoint (a repair
     attempt on the collapsed policy), ref = frozen SFT policy.
+    `seed_offset` shifts all sampling for ablation replicates.
     """
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     cfg = load_config()
     g = cfg["grpo"]
-    torch.manual_seed(cfg["model"]["seed"])
+    torch.manual_seed(cfg["model"]["seed"] + seed_offset)
     tok = AutoTokenizer.from_pretrained(cfg["model"]["name"])
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
@@ -136,7 +138,7 @@ def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str):
 
     pool = pd.read_parquet(rl_path)
     opt = torch.optim.Adam(policy.parameters(), lr=g["lr"])
-    rng = np.random.default_rng(cfg["model"]["seed"])
+    rng = np.random.default_rng(cfg["model"]["seed"] + seed_offset)
 
     hist = []
     for step in range(g["steps"]):
@@ -193,10 +195,13 @@ def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str):
     # no-signal steps are evidence for the reward-variance finding — keep
     # the log in results/ where it gets committed
     Path("results").mkdir(exist_ok=True)
-    log.to_csv("results/grpo_log.csv", index=False)
+    stem = Path(out_path).stem
+    log_name = "grpo_log.csv" if stem == "grpo" else f"{stem}_log.csv"
+    log.to_csv(f"results/{log_name}", index=False)
     n_skipped = int(log["skipped"].sum()) if len(log) else 0
     print(f"grpo: {len(hist)} steps ({n_skipped} no-signal) -> {out_path}")
 
 
 if __name__ == "__main__":
-    train_grpo(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    train_grpo(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4],
+               int(sys.argv[5]) if len(sys.argv) > 5 else 0)
