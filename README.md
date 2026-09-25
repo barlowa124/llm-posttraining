@@ -104,7 +104,7 @@ Two eval-iteration artifacts are kept visible:
   KL coefficient. Two ablations landed (a second rollout seed, identical
   result; an SFT-init run, provably inert). Still open: temperature and
   KL sweeps, and reward-scheme variants.
-- The 135M base is very small. Part of the instability is capacity.
+- The 135M base is small. Part of the instability is capacity.
   A slightly larger base or KL-annealed schedule is the next knob.
 - DPO pair construction is idealized (clean chosen/rejected). Real
   preference data is noisier and would likely destabilize further.
