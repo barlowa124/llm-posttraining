@@ -47,19 +47,19 @@
       "fabricates": 0.0
     }
   },
-  "dpo_lr1e5": {
+  "grpo": {
     "answerable": {
       "n": 80,
-      "correct": 0.0,
-      "abstains": 1.0,
-      "degenerate": 0.0,
+      "correct": 0.9875,
+      "abstains": 0.0,
+      "degenerate": 0.0125,
       "fabricates": 0.0
     },
     "unanswerable": {
       "n": 80,
       "correct": 0.0,
-      "abstains": 0.8625,
-      "degenerate": 0.1375,
+      "abstains": 1.0,
+      "degenerate": 0.0,
       "fabricates": 0.0
     }
   }

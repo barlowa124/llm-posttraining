@@ -10,6 +10,7 @@ the queried fact in context; unanswerable examples contain only *other*
 entities' facts, so copying is a fabrication.
 """
 
+import re
 import sys
 from pathlib import Path
 
@@ -118,6 +119,31 @@ def build_dpo_pairs(df: pd.DataFrame, cfg) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def build_rl(cfg, train: pd.DataFrame) -> pd.DataFrame:
+    """RL prompt pool: train entities only, with gold_value for the reward.
+
+    The reward function is the eval classifier itself — the loop optimizes
+    exactly the behavior metric that gets reported, on entities disjoint
+    from the eval split.
+    """
+    out = train.sample(
+        n=min(cfg["data"]["n_rl_prompts"], len(train)),
+        random_state=cfg["data"]["seed"] + 8,
+    ).copy()
+    # gold_value for answerable rows: the value token in `gold` that is not
+    # the entity name; unanswerable rows don't need it (classifier ignores)
+    def _val(r):
+        if r["kind"] != "answerable":
+            return ""
+        for tok in r["gold"].replace(".", " ").split():
+            if tok != r["entity"] and re.fullmatch(r"[0-9]+|liver|kidney", tok):
+                return tok
+        return ""
+
+    out["gold_value"] = out.apply(_val, axis=1)
+    return out.reset_index(drop=True)
+
+
 def build_eval(cfg) -> pd.DataFrame:
     """Held-out entities only: unseen names at eval time."""
     d = cfg["data"]
@@ -150,13 +176,15 @@ def main(out_dir: str):
                                cfg["data"]["seed"])[-cfg["data"]["heldout_entities"]:])
     train = df[~df.entity.isin(heldout)].reset_index(drop=True)
     pairs = build_dpo_pairs(train, cfg)
+    rl = build_rl(cfg, train)
     ev = build_eval(cfg)
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     train.to_parquet(out / "sft.parquet", index=False)
     pairs.to_parquet(out / "dpo.parquet", index=False)
+    rl.to_parquet(out / "rl.parquet", index=False)
     ev.to_parquet(out / "eval.parquet", index=False)
-    print(f"sft {len(train)} | dpo {len(pairs)} | eval {len(ev)} "
+    print(f"sft {len(train)} | dpo {len(pairs)} | rl {len(rl)} | eval {len(ev)} "
           f"({len(heldout)} held-out entities)")
 
 

@@ -1,12 +1,13 @@
 # llm-posttraining
 
-SFT + **hand-rolled DPO** on a small open LM, on the behavior this
-portfolio cares most about: **answering when the evidence supports it and
-abstaining instead of fabricating when it does not** — measured before and
-after each stage on held-out entities.
+SFT + **hand-rolled DPO + hand-rolled GRPO** on a small open LM, on the
+behavior this portfolio cares most about: **answering when the evidence
+supports it and abstaining instead of fabricating when it does not** —
+measured before and after each stage on held-out entities.
 
 **Status: working demonstration.** Snakemake DAG runs synthetic data ->
-SFT -> DPO -> three-stage evaluation on `SmolLM2-135M` (base, CPU-trainable).
+SFT -> DPO -> GRPO -> four-stage evaluation on `SmolLM2-135M` (base,
+CPU-trainable).
 
 ## Design
 
@@ -21,6 +22,12 @@ SFT -> DPO -> three-stage evaluation on `SmolLM2-135M` (base, CPU-trainable).
   not via `trl`: frozen SFT reference, `-log sigmoid(β·Δlogp)` on
   chosen/rejected completion pairs (correct-vs-wrong-value on answerable
   prompts; abstain-vs-fabricated-answer on unanswerable).
+- **GRPO** (`grpo.py`): group-relative advantage over `k=6` temperature
+  rollouts per prompt, reward = the eval classifier with a shaped middle
+  tier, plus KL to the frozen SFT reference. Initialized from the
+  *collapsed* DPO checkpoint — a repair attempt, not a fresh polish.
+  One gradient step per rollout batch (on-policy, ratio=1, no clip
+  needed), teacher-forced seq logprobs.
 - **Eval**: greedy decode; each response classified `correct` (entity +
   gold value, word-boundary), `abstains`, or `fabricates` — per stage,
   on entities never seen in training.
@@ -33,14 +40,29 @@ SFT -> DPO -> three-stage evaluation on `SmolLM2-135M` (base, CPU-trainable).
 | SFT | 100% correct | 100% abstains | solves the task cleanly |
 | DPO (lr 1e-4) | 55% correct, 31% abstains | 5% abstains, **95% degenerate** | train pref-acc 1.0, deployed behavior collapses |
 | DPO (lr 1e-5) | 0% correct — abstains all | 86% abstains | collapses the *other* way |
+| **GRPO (shaped, from collapsed DPO)** | **98.75% correct** | **100% abstains** | RL *repairs* the collapse |
 
-The headline is a negative result, measured properly: **preference accuracy
-on training pairs does not predict deployed behavior.** Both DPO variants
-hit 100% preference accuracy on the training pairs while destabilizing the
-held-out policy in *opposite* directions — repetition collapse
-(`I I I I I…`) at 1e-4, blanket over-abstention at 1e-5. On a 135M model
-with clean synthetic pairs, the abstain/answer balance is fragile and DPO
-moves it globally, not per-prompt-type.
+The DPO headline is a negative result, measured properly: **preference
+accuracy on training pairs does not predict deployed behavior.** Both DPO
+variants hit 100% preference accuracy on the training pairs while
+destabilizing the held-out policy in *opposite* directions — repetition
+collapse (`I I I I I…`) at 1e-4, blanket over-abstention at 1e-5.
+
+Then the RL result, and the subtler one underneath it:
+
+- **Shaped GRPO repairs the collapse on held-out entities** — 95%
+  degenerate -> 100% abstain on unanswerable, 55% -> 98.75% correct on
+  answerable — in only **8 gradient steps** (52 of 60 steps found zero
+  within-group reward variance and were skipped). KL-to-SFT is part of
+  the repair mechanism; the recovery is not attributable to reward alone.
+- **The prerequisite finding:** binary +1/-1 rewards produce *no gradient
+  at all* in either regime. On the saturated SFT policy every rollout in
+  a group scores +1; on the collapsed DPO policy every rollout scores -1
+  (even at temperature 2.5). Zero variance -> zero advantage -> zero
+  gradient. The shaped middle tier (partial credit for naming the entity
+  or emitting an abstain fragment) is what creates the variance RL needs.
+  Reward shaping isn't decoration here — it's the difference between RL
+  doing nothing and RL working.
 
 Two eval-iteration artifacts are kept visible:
 
@@ -56,6 +78,9 @@ Two eval-iteration artifacts are kept visible:
 - The task is templated synthetic; it demonstrates post-training mechanics
   and measured behavior change, not a real-domain capability.
 - One model size, one seed, greedy decode; no beta sweep, no KL tracking.
+- GRPO ran 60 steps at one shaped-reward scheme, one temperature, one
+  init. The repair result is real but not ablated — per-seed variance and
+  the KL-vs-reward attribution are open questions, documented as such.
 - The 135M base is very small — part of the instability is capacity;
   a slightly larger base or KL-annealed schedule is the next honest knob.
 - DPO pair construction is idealized (clean chosen/rejected); real

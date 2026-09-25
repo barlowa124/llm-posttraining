@@ -1,16 +1,28 @@
 {
-  "created_utc": "2026-09-25T04:42:07.376755+00:00",
-  "git": "unknown",
+  "created_utc": "2026-09-25T15:14:23.306288+00:00",
+  "git": "c50a524204+dirty",
   "versions": {
     "torch": "2.8.0",
     "transformers": "4.57.6",
     "pandas": "2.3.3"
   },
-  "config_sha256": "5288dfb64a91f0c826cbd32f89e8c714093492a2000795f9a90d0a2bb461ee39",
+  "config_sha256": "6dc01d895cf7e9e0c7c122f69476a9a20ccd6250de348dc8e4b1c40638dfd59f",
   "inputs": [
     {
       "path": "data/processed/eval.parquet",
       "sha256": "1189ed904a7ac65dabaf7b294e6bce8c1a51bb5d2db6dac1387e1ea798cc6a19"
+    },
+    {
+      "path": "data/processed/sft.pt",
+      "sha256": "39d2bf9d0bcce65f342394078f4edea05cad6e7cd724cde068445202a6a8be72"
+    },
+    {
+      "path": "data/processed/dpo.pt",
+      "sha256": "6b1143f5cc325311ce3be8f4236103d65b091f8a2ab236bcc46e4e69349cf61d"
+    },
+    {
+      "path": "data/processed/grpo.pt",
+      "sha256": "1fa630679e8f489a0e52271ef99bf0bcd3b33223f15684a17677eec843223f0d"
     }
   ]
 }

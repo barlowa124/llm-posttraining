@@ -13,11 +13,21 @@ model:
   beta: 0.1          # DPO KL-strength to the frozen SFT reference
   seed: 5
 
+grpo:                # RL post-training from the SFT checkpoint
+  steps: 60
+  prompts_per_step: 4
+  n_samples: 6       # rollouts per prompt (the GRPO group)
+  lr: 0.00002
+  kl_coef: 0.05      # penalty on mean per-token KL to frozen SFT ref
+  max_new: 40
+  temperature: 1.0
+
 data:
   n_entities: 400         # templated pharmacology facts
   n_answerable_per_entity: 2
   n_unanswerable_train: 400
   n_dpo_pairs: 400
+  n_rl_prompts: 400       # prompt pool for GRPO rollouts (train entities)
   heldout_entities: 80    # eval entities never seen in training
   seed: 5
 

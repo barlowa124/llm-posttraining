@@ -91,7 +91,8 @@ def eval_stage(model, tok, ev: pd.DataFrame):
     return out, rdf
 
 
-def main(eval_parquet: str, sft_model: str, dpo_model: str, out_json: str):
+def main(eval_parquet: str, sft_model: str, dpo_model: str, out_json: str,
+         grpo_model: str = None):
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     cfg = load_config()
@@ -101,9 +102,12 @@ def main(eval_parquet: str, sft_model: str, dpo_model: str, out_json: str):
         tok.pad_token = tok.eos_token
     ev = pd.read_parquet(eval_parquet)
 
+    stages = [("base", None), ("sft", sft_model), ("dpo", dpo_model)]
+    if grpo_model:
+        stages.append(("grpo", grpo_model))
     result = {}
     responses = {}
-    for stage, ckpt in (("base", None), ("sft", sft_model), ("dpo", dpo_model)):
+    for stage, ckpt in stages:
         model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
         if ckpt:
             model.load_state_dict(torch.load(ckpt))
@@ -116,11 +120,15 @@ def main(eval_parquet: str, sft_model: str, dpo_model: str, out_json: str):
     with open(out_json, "w") as f:
         json.dump(result, f, indent=2)
     # keep sample responses inspectable — evidence for the classified rates
-    responses["base"].to_csv("results/responses_base.csv", index=False)
-    responses["dpo"].to_csv("results/responses_dpo.csv", index=False)
-    write_manifest("results/provenance.json", inputs=[eval_parquet])
+    for stage, rdf in responses.items():
+        rdf.to_csv(f"results/responses_{stage}.csv", index=False)
+    write_manifest(
+        "results/provenance.json",
+        inputs=[eval_parquet]
+        + [c for c in (sft_model, dpo_model, grpo_model) if c],
+    )
     print(f"eval -> {out_json}")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    main(*sys.argv[1:6])
