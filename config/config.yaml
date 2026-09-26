@@ -34,3 +34,6 @@ data:
 evaluation:
   n_answerable: 160
   n_unanswerable: 160
+
+retrieval:           # RAG eval (eval_rag.py): BM25 over the fact corpus
+  k: 3               # docs retrieved per question

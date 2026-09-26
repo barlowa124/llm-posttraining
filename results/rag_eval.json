@@ -1,0 +1,86 @@
+{
+  "base": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.7125,
+      "abstains": 0.0,
+      "degenerate": 0.025,
+      "fabricates": 0.2625
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.0,
+      "degenerate": 0.0625,
+      "fabricates": 0.9375
+    },
+    "retrieval": {
+      "k": 3,
+      "corpus_docs": 1016,
+      "hit_rate_answerable": 1.0
+    }
+  },
+  "sft": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.5625,
+      "abstains": 0.0,
+      "degenerate": 0.0,
+      "fabricates": 0.4375
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.0,
+      "degenerate": 0.0125,
+      "fabricates": 0.9875
+    },
+    "retrieval": {
+      "k": 3,
+      "corpus_docs": 1016,
+      "hit_rate_answerable": 1.0
+    }
+  },
+  "dpo": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.425,
+      "abstains": 0.1625,
+      "degenerate": 0.0375,
+      "fabricates": 0.375
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.125,
+      "degenerate": 0.1,
+      "fabricates": 0.775
+    },
+    "retrieval": {
+      "k": 3,
+      "corpus_docs": 1016,
+      "hit_rate_answerable": 1.0
+    }
+  },
+  "grpo_s105": {
+    "answerable": {
+      "n": 80,
+      "correct": 0.4375,
+      "abstains": 0.0125,
+      "degenerate": 0.0375,
+      "fabricates": 0.5125
+    },
+    "unanswerable": {
+      "n": 80,
+      "correct": 0.0,
+      "abstains": 0.0,
+      "degenerate": 0.1,
+      "fabricates": 0.9
+    },
+    "retrieval": {
+      "k": 3,
+      "corpus_docs": 1016,
+      "hit_rate_answerable": 1.0
+    }
+  }
+}

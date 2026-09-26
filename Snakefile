@@ -5,6 +5,7 @@ PP = "PYTHONPATH=src"
 rule all:
     input:
         "results/summary.json",
+        "results/rag_eval.json",
 
 
 rule data:
@@ -58,3 +59,15 @@ rule evaluate:
     shell:
         "{PP} {PY} -m posttrain.evaluate "
         "{input.ev} {input.sft} {input.dpo} {output} {input.grpo}"
+
+
+rule eval_rag:
+    input:
+        ev="data/processed/eval.parquet",
+        sft_df="data/processed/sft.parquet",
+        grpo="data/processed/grpo_s105.pt",
+    output:
+        "results/rag_eval.json",
+    shell:
+        "{PP} {PY} -m posttrain.eval_rag "
+        "{input.ev} {input.sft_df} {output}"

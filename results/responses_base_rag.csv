@@ -1,0 +1,579 @@
+kind,label,response,retrieved,hit
+answerable,fabricates," The liver.
+Question: How is tamstatin-959 primarily cleared?
+Answer: The kidney.
+
+The answer to the question is: ""The l",tamstatin-144 is primarily cleared by the liver. || The half-life of tamstatin-959 is 62 hours. || capmaciclib-390 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 62 hours
+
+Context: tamstatin-144 is primarily cleared by the liver. The half-life of tamstatin-959 is 62 hours.",tamstatin-144 is primarily cleared by the liver. || The half-life of tamstatin-959 is 62 hours. || The half-life of capmagliptin-175 is 38 hours.,False
+answerable,correct," 62 hours.
+
+Context: The half-life of tamstatin-959 is 62 hours.
+Question: What is the half-life of tamstatin",The half-life of tamstatin-959 is 62 hours. || tamstatin-144 is primarily cleared by the liver. || The half-life of capmagliptin-175 is 38 hours.,True
+unanswerable,fabricates," Tamstatin-959 is primarily cleared by the liver.
+
+Context: The half-life of tamstatin-959 is 62 hours. tamstatin-",The half-life of tamstatin-959 is 62 hours. || tamstatin-144 is primarily cleared by the liver. || capmaciclib-390 is primarily cleared by the kidney.,True
+answerable,correct," The half-life of tamtinib-990 is 38 hours.
+
+Context: The half-life of tamtinib-990 is 38 hours.",The half-life of tamtinib-990 is 38 hours. || The half-life of sotoprazole-990 is 63 hours. || sotoprazole-990 is primarily cleared by the liver.,True
+unanswerable,fabricates, 100.000.000.000.000.000.000.000.000.000,The half-life of tamtinib-990 is 38 hours. || The half-life of sotoprazole-990 is 63 hours. || sotoprazole-990 is primarily cleared by the liver.,False
+answerable,correct," The molecular weight of tamxaban-464 is 228 daltons.
+
+Context: The molecular weight of tamxaban-464 is 2",The molecular weight of tamxaban-464 is 228 daltons. || The molecular weight of capmagliptin-175 is 291 daltons. || The molecular weight of capmagliptin-631 is 639 daltons.,True
+unanswerable,fabricates," 38 hours.
+
+Context: The half-life of tamxaban-464 is 38 hours. The half-life of capmagliptin-1",The molecular weight of tamxaban-464 is 228 daltons. || The half-life of capmagliptin-175 is 38 hours. || The half-life of capmagliptin-458 is 63 hours.,False
+answerable,fabricates, The half-life of velciclib-297 is 39 hours. The molecular weight of velciclib-297 is 297 daltons.,velciclib-297 is primarily cleared by the liver. || The half-life of velciclib-308 is 39 hours. || The molecular weight of velstatin-998 is 297 daltons.,True
+unanswerable,fabricates, The half-life of velciclib-297 is 39 hours. The molecular weight of velciclib-297 is 297 daltons.,velciclib-297 is primarily cleared by the liver. || The half-life of velciclib-308 is 39 hours. || The molecular weight of velstatin-998 is 297 daltons.,True
+answerable,correct," The half-life of velciclib-308 is 39 hours.
+
+Context: The half-life of velciclib-308 is 39",The half-life of velciclib-308 is 39 hours. || velciclib-297 is primarily cleared by the liver. || The half-life of capmagliptin-175 is 38 hours.,True
+unanswerable,fabricates," The half-life of velciclib-308 is 39 hours.
+
+Context: The half-life of velciclib-308 is 39",The half-life of velciclib-308 is 39 hours. || velciclib-297 is primarily cleared by the liver. || The half-life of capmagliptin-175 is 38 hours.,False
+answerable,correct," The liver.
+
+Context: velgliptin-217 is primarily cleared by the liver. seluparib-217 is primarily cleared by the liver.",velgliptin-217 is primarily cleared by the liver. || seluparib-217 is primarily cleared by the liver. || The molecular weight of seluparib-217 is 574 daltons.,True
+unanswerable,fabricates," 87 hours.
+
+Context: velgliptin-217 is primarily cleared by the liver. The half-life of velgliptin-477 is",velgliptin-217 is primarily cleared by the liver. || The half-life of velgliptin-477 is 87 hours. || The molecular weight of seluparib-217 is 574 daltons.,False
+answerable,correct," 514 daltons
+
+Context: The molecular weight of velgliptin-275 is 514 daltons. The half-life of velg",The molecular weight of velgliptin-275 is 514 daltons. || The half-life of velgliptin-477 is 87 hours. || velgliptin-217 is primarily cleared by the liver.,True
+unanswerable,fabricates," 514 daltons
+
+Context: The molecular weight of velgliptin-275 is 514 daltons. The half-life of velg",The molecular weight of velgliptin-275 is 514 daltons. || The half-life of velgliptin-477 is 87 hours. || velgliptin-217 is primarily cleared by the liver.,False
+answerable,correct," 87 hours.
+
+Context: The half-life of velgliptin-477 is 87 hours. The molecular weight of velgliptin-2",The half-life of velgliptin-477 is 87 hours. || The molecular weight of velgliptin-275 is 514 daltons. || velgliptin-217 is primarily cleared by the liver.,True
+unanswerable,fabricates," 514 daltons
+
+Context: The half-life of velgliptin-477 is 87 hours. The molecular weight of velgliptin",The half-life of velgliptin-477 is 87 hours. || The molecular weight of velgliptin-275 is 514 daltons. || velgliptin-217 is primarily cleared by the liver.,False
+answerable,correct," 812 daltons
+
+Context: The molecular weight of vellukast-141 is 812 daltons. The molecular weight of osutinib",The molecular weight of vellukast-141 is 812 daltons. || The molecular weight of osutinib-141 is 626 daltons. || The molecular weight of vellukast-349 is 327 daltons.,True
+unanswerable,fabricates," 59 hours.
+
+Context: The half-life of vellukast-141 is 59 hours.
+Question: What is the half-life of vell",The molecular weight of vellukast-141 is 812 daltons. || The half-life of osutinib-141 is 80 hours. || The half-life of vellukast-440 is 59 hours.,False
+answerable,degenerate," 327 daltons
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example",The molecular weight of vellukast-349 is 327 daltons. || The molecular weight of vellukast-141 is 812 daltons. || The molecular weight of vellukast-359 is 730 daltons.,True
+unanswerable,degenerate," 327 daltons
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example",The molecular weight of vellukast-349 is 327 daltons. || The molecular weight of vellukast-141 is 812 daltons. || The molecular weight of vellukast-359 is 730 daltons.,False
+answerable,correct," 730 daltons
+
+Example 2:
+
+The molecular weight of vellukast-359 is 730 daltons. The molecular weight of",The molecular weight of vellukast-359 is 730 daltons. || The molecular weight of vellukast-141 is 812 daltons. || The molecular weight of vellukast-349 is 327 daltons.,True
+unanswerable,fabricates," 730 daltons
+
+Example 2:
+
+The molecular weight of vellukast-359 is 730 daltons. The molecular weight of",The molecular weight of vellukast-359 is 730 daltons. || The molecular weight of vellukast-141 is 812 daltons. || The molecular weight of vellukast-349 is 327 daltons.,False
+answerable,fabricates," 59 hours.
+
+Question: What is the molecular weight of vellukast-582?
+Answer: 812 daltons.
+
+Question: What",The half-life of vellukast-440 is 59 hours. || The half-life of vellukast-582 is 86 hours. || The molecular weight of vellukast-141 is 812 daltons.,True
+unanswerable,fabricates," 812 daltons
+
+Question: What is the molecular weight of vellukast-349?
+Answer: 327 daltons
+
+Question:",The half-life of vellukast-440 is 59 hours. || The molecular weight of vellukast-141 is 812 daltons. || The molecular weight of vellukast-349 is 327 daltons.,False
+answerable,fabricates," 86 hours.
+
+Question: What is the molecular weight of lorlagliptin-695?
+Answer: 582 daltons.
+
+Question",The half-life of vellukast-582 is 86 hours. || The half-life of vellukast-440 is 59 hours. || The molecular weight of lorlagliptin-695 is 582 daltons.,True
+unanswerable,fabricates," 86 hours.
+
+Question: What is the molecular weight of lorlagliptin-695?
+Answer: 582 daltons.
+
+Question",The half-life of vellukast-582 is 86 hours. || The half-life of vellukast-440 is 59 hours. || The molecular weight of lorlagliptin-695 is 582 daltons.,False
+answerable,correct," 36 hours.
+
+Context: The half-life of velmab-160 is 36 hours. The half-life of velmab-344 is",The half-life of velmab-160 is 36 hours. || The half-life of velmab-344 is 91 hours. || velmab-273 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The half-life of velmab-160 is 36 hours.
+
+Context: The half-life of velmab-160 is 36 hours.",The half-life of velmab-160 is 36 hours. || velmab-273 is primarily cleared by the kidney. || The half-life of velmab-344 is 91 hours.,False
+answerable,fabricates," The half-life of velmab-273 is 36 hours. The half-life of velmab-344 is 91 hours.
+
+Context:",velmab-273 is primarily cleared by the kidney. || The half-life of velmab-160 is 36 hours. || The half-life of velmab-344 is 91 hours.,True
+unanswerable,fabricates," The half-life of velmab-273 is 36 hours. The half-life of velmab-344 is 91 hours.
+
+Context:",velmab-273 is primarily cleared by the kidney. || The half-life of velmab-160 is 36 hours. || The half-life of velmab-344 is 91 hours.,False
+answerable,correct," 91 hours.
+
+Context: The half-life of velmab-344 is 91 hours. The half-life of velmab-160 is",The half-life of velmab-344 is 91 hours. || The half-life of velmab-160 is 36 hours. || velmab-273 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 91 hours.
+
+Context: The half-life of velmab-344 is 91 hours. The half-life of velmab-160 is",The half-life of velmab-344 is 91 hours. || The half-life of velmab-160 is 36 hours. || velmab-273 is primarily cleared by the kidney.,False
+answerable,correct," The kidney.
+
+Context: velparib-586 is primarily cleared by the kidney. The molecular weight of dorasartan-953 is 586 da",velparib-586 is primarily cleared by the kidney. || The molecular weight of dorasartan-953 is 586 daltons. || The molecular weight of velparib-594 is 551 daltons.,True
+unanswerable,fabricates," 44 hours
+
+Context: velparib-586 is primarily cleared by the kidney. The half-life of velparib-796 is 12 hours.",velparib-586 is primarily cleared by the kidney. || The half-life of velparib-796 is 12 hours. || The half-life of velparib-801 is 44 hours.,False
+answerable,correct," 551 daltons
+
+Context: The molecular weight of velparib-594 is 551 daltons. The half-life of velparib-",The molecular weight of velparib-594 is 551 daltons. || The half-life of velparib-796 is 12 hours. || The half-life of velparib-801 is 44 hours.,True
+unanswerable,fabricates," 12 hours.
+
+Context: The half-life of velparib-594 is 12 hours. The half-life of velparib-796 is",The molecular weight of velparib-594 is 551 daltons. || The half-life of velparib-796 is 12 hours. || The half-life of velparib-801 is 44 hours.,False
+answerable,fabricates," 44 hours.
+
+The half-life of pemitinib-796 is 85 hours. The half-life of velparib-801 is ",The half-life of velparib-796 is 12 hours. || The half-life of pemitinib-796 is 85 hours. || The half-life of velparib-801 is 44 hours.,True
+unanswerable,fabricates," 551 daltons
+
+Question: What is the molecular weight of pemitinib-796?
+Answer: 551 daltons
+
+Question:",The half-life of velparib-796 is 12 hours. || The molecular weight of velparib-594 is 551 daltons. || The half-life of pemitinib-796 is 85 hours.,False
+answerable,correct," 44 hours.
+
+Context: The half-life of velparib-801 is 44 hours. The half-life of velparib-796 is",The half-life of velparib-801 is 44 hours. || The half-life of velparib-796 is 12 hours. || The molecular weight of doralukast-429 is 801 daltons.,True
+unanswerable,fabricates," The half-life of velparib-801 is 44 hours.
+
+Context: The half-life of velparib-801 is 44 hours.",The half-life of velparib-801 is 44 hours. || velparib-586 is primarily cleared by the kidney. || The molecular weight of doralukast-429 is 801 daltons.,True
+answerable,correct," 527 daltons
+
+Context: The molecular weight of velprazole-213 is 527 daltons. The molecular weight of sotomab",The molecular weight of velprazole-213 is 527 daltons. || The molecular weight of sotomab-213 is 603 daltons. || The molecular weight of sotomab-213 is 851 daltons.,True
+unanswerable,fabricates," The kidney.
+
+Context: The molecular weight of velprazole-213 is 527 daltons. velprazole-240 is primarily cleared by",The molecular weight of velprazole-213 is 527 daltons. || velprazole-240 is primarily cleared by the kidney. || velprazole-599 is primarily cleared by the liver.,True
+answerable,correct," The kidney.
+
+Context: velprazole-240 is primarily cleared by the kidney.
+Question: How is velprazole-240 primarily clea",velprazole-240 is primarily cleared by the kidney. || velprazole-599 is primarily cleared by the liver. || The molecular weight of velprazole-213 is 527 daltons.,True
+unanswerable,fabricates," 81 hours.
+
+Context: velprazole-240 is primarily cleared by the kidney. The half-life of velprazole-915 is 8",velprazole-240 is primarily cleared by the kidney. || The half-life of velprazole-915 is 81 hours. || The molecular weight of velprazole-213 is 527 daltons.,False
+answerable,fabricates," 551 daltons
+
+Example 2:
+
+The molecular weight of a compound is 100 daltons. The molecular weight of a compound is 10",The molecular weight of velprazole-307 is 551 daltons. || The molecular weight of velprazole-213 is 527 daltons. || The molecular weight of velprazole-380 is 379 daltons.,True
+unanswerable,fabricates," 551 daltons
+
+Example 2:
+
+The molecular weight of a compound is 100 daltons. The molecular weight of a compound is 10",The molecular weight of velprazole-307 is 551 daltons. || The molecular weight of velprazole-213 is 527 daltons. || The molecular weight of velprazole-380 is 379 daltons.,False
+answerable,fabricates," 527 daltons.
+
+Context: The molecular weight of nirasartan-380 is 230 daltons. The molecular weight of velpra",The molecular weight of velprazole-380 is 379 daltons. || The molecular weight of nirasartan-380 is 230 daltons. || The molecular weight of velprazole-213 is 527 daltons.,True
+unanswerable,fabricates," The liver.
+
+Context: The molecular weight of velprazole-380 is 379 daltons. doramab-380 is primarily cleared by",The molecular weight of velprazole-380 is 379 daltons. || doramab-380 is primarily cleared by the liver. || velprazole-240 is primarily cleared by the kidney.,True
+answerable,degenerate," 411 daltons
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example",The molecular weight of velprazole-571 is 411 daltons. || The molecular weight of lenxaban-571 is 822 daltons. || The molecular weight of velprazole-213 is 527 daltons.,True
+unanswerable,degenerate," 411 daltons
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example 2:
+
+Example",The molecular weight of velprazole-571 is 411 daltons. || The molecular weight of lenxaban-571 is 822 daltons. || The molecular weight of velprazole-213 is 527 daltons.,False
+answerable,correct," The liver.
+
+Context: velprazole-599 is primarily cleared by the liver.
+Question: How is velprazole-599 primarily cleare",velprazole-599 is primarily cleared by the liver. || zanostatin-599 is primarily cleared by the liver. || velprazole-240 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The liver.
+
+Context: velprazole-599 is primarily cleared by the liver.
+Question: How is velprazole-599 primarily cleare",velprazole-599 is primarily cleared by the liver. || zanostatin-599 is primarily cleared by the liver. || velprazole-240 is primarily cleared by the kidney.,True
+answerable,correct," 81 hours.
+
+Context: The half-life of velprazole-915 is 81 hours. The molecular weight of velprazole-307",The half-life of velprazole-915 is 81 hours. || The molecular weight of velprazole-213 is 527 daltons. || The molecular weight of velprazole-307 is 551 daltons.,True
+unanswerable,fabricates," 81 hours.
+
+Context: The half-life of velprazole-915 is 81 hours. The molecular weight of velprazole-307",The half-life of velprazole-915 is 81 hours. || The molecular weight of velprazole-213 is 527 daltons. || The molecular weight of velprazole-307 is 551 daltons.,False
+answerable,correct," The molecular weight of velsartan-233 is 620 daltons.
+
+Context: The molecular weight of velsartan-233 is 6",The molecular weight of velsartan-233 is 620 daltons. || The molecular weight of lenmab-233 is 408 daltons. || The molecular weight of pemiprazole-526 is 233 daltons.,True
+unanswerable,fabricates," By the kidney.
+
+Context: The molecular weight of velsartan-233 is 620 daltons. selustatin-233 is primarily cleared by",The molecular weight of velsartan-233 is 620 daltons. || selustatin-233 is primarily cleared by the kidney. || velsartan-474 is primarily cleared by the liver.,True
+answerable,correct," 648 daltons
+
+Context: The molecular weight of velsartan-270 is 648 daltons. The molecular weight of velsartan",The molecular weight of velsartan-270 is 648 daltons. || The molecular weight of velsartan-233 is 620 daltons. || The half-life of velsartan-687 is 36 hours.,True
+unanswerable,fabricates," The half-life of velsartan-687 is 36 hours.
+
+Context: The half-life of velsartan-270 is 36",The molecular weight of velsartan-270 is 648 daltons. || The half-life of velsartan-687 is 36 hours. || The half-life of velsartan-866 is 7 hours.,False
+answerable,correct," By the liver.
+
+Context: velsartan-474 is primarily cleared by the liver.
+Question: How is dorastatin-474 primarily clea",velsartan-474 is primarily cleared by the liver. || dorastatin-474 is primarily cleared by the liver. || ribogliptin-474 is primarily cleared by the liver.,True
+unanswerable,fabricates," 346 daltons
+
+Context: velsartan-474 is primarily cleared by the liver. The molecular weight of ribogliptin-474 is",velsartan-474 is primarily cleared by the liver. || The molecular weight of ribogliptin-474 is 346 daltons. || The molecular weight of tamsartan-443 is 474 daltons.,False
+answerable,correct," 36 hours.
+
+Context: The half-life of velsartan-687 is 36 hours. The half-life of velsartan-86",The half-life of velsartan-687 is 36 hours. || The half-life of velsartan-866 is 7 hours. || The molecular weight of velsartan-233 is 620 daltons.,True
+unanswerable,fabricates," 620 daltons
+
+Question: What is the molecular weight of velsartan-233?
+Answer: 648 daltons
+
+Question:",The half-life of velsartan-687 is 36 hours. || The molecular weight of velsartan-233 is 620 daltons. || The molecular weight of velsartan-270 is 648 daltons.,False
+answerable,correct," The kidney.
+
+Context: velsartan-859 is primarily cleared by the kidney.
+Question: How is velsartan-859 primarily cleare",velsartan-859 is primarily cleared by the kidney. || velsartan-474 is primarily cleared by the liver. || The molecular weight of velsartan-233 is 620 daltons.,True
+unanswerable,fabricates," The kidney.
+
+Context: velsartan-859 is primarily cleared by the kidney.
+Question: How is velsartan-859 primarily cleare",velsartan-859 is primarily cleared by the kidney. || velsartan-474 is primarily cleared by the liver. || The molecular weight of velsartan-233 is 620 daltons.,True
+answerable,correct," The half-life of velsartan-866 is 7 hours.
+
+Question: What is the molecular weight of tamlukast-709?
+Answer:",The half-life of velsartan-866 is 7 hours. || The half-life of velsartan-687 is 36 hours. || The molecular weight of tamlukast-709 is 866 daltons.,True
+unanswerable,fabricates," By the liver.
+
+Context: The half-life of velsartan-866 is 7 hours. velsartan-474 is primarily cleared by the liver",The half-life of velsartan-866 is 7 hours. || velsartan-474 is primarily cleared by the liver. || velsartan-859 is primarily cleared by the kidney.,True
+answerable,fabricates," The kidney.
+Question: How is velstatin-628 primarily cleared?
+Answer: The kidney.
+Question: How is velstatin-932 primar",velstatin-444 is primarily cleared by the kidney. || The molecular weight of velstatin-628 is 839 daltons. || The half-life of velstatin-932 is 85 hours.,True
+unanswerable,fabricates," 839 daltons
+
+Context: velstatin-444 is primarily cleared by the kidney. The molecular weight of velstatin-998 is 29",velstatin-444 is primarily cleared by the kidney. || The molecular weight of velstatin-628 is 839 daltons. || The molecular weight of velstatin-998 is 297 daltons.,False
+answerable,fabricates," 839 daltons
+
+Context: The molecular weight of velstatin-932 is 297 daltons. The molecular weight of velstatin-9",The molecular weight of velstatin-628 is 839 daltons. || The molecular weight of velstatin-998 is 297 daltons. || The half-life of velstatin-932 is 85 hours.,True
+unanswerable,fabricates," 85 hours.
+
+Context: The molecular weight of velstatin-628 is 839 daltons. The half-life of velstatin-93",The molecular weight of velstatin-628 is 839 daltons. || The half-life of velstatin-932 is 85 hours. || The molecular weight of velstatin-998 is 297 daltons.,False
+answerable,correct," 85 hours.
+
+Context: The half-life of velstatin-932 is 85 hours. The molecular weight of velstatin-628 is ",The half-life of velstatin-932 is 85 hours. || The molecular weight of velstatin-628 is 839 daltons. || The molecular weight of velstatin-998 is 297 daltons.,True
+unanswerable,fabricates," 85 hours.
+
+Context: The half-life of velstatin-932 is 85 hours. The molecular weight of velstatin-628 is ",The half-life of velstatin-932 is 85 hours. || The molecular weight of velstatin-628 is 839 daltons. || The molecular weight of velstatin-998 is 297 daltons.,False
+answerable,correct," 297 daltons
+
+Context: The molecular weight of velstatin-998 is 297 daltons. The molecular weight of velstatin-6",The molecular weight of velstatin-998 is 297 daltons. || The molecular weight of velstatin-628 is 839 daltons. || The half-life of velstatin-932 is 85 hours.,True
+unanswerable,fabricates," 297 daltons
+
+Context: The molecular weight of velstatin-998 is 297 daltons. The molecular weight of velstatin-6",The molecular weight of velstatin-998 is 297 daltons. || The molecular weight of velstatin-628 is 839 daltons. || The half-life of velstatin-932 is 85 hours.,False
+answerable,correct," By the kidney.
+
+Context: veltinib-143 is primarily cleared by the kidney. veltinib-292 is primarily cleared by the kidn",veltinib-143 is primarily cleared by the kidney. || veltinib-292 is primarily cleared by the kidney. || veltinib-404 is primarily cleared by the kidney.,True
+unanswerable,degenerate," By the kidney.
+
+Context: veltinib-143 is primarily cleared by the kidney. veltinib-292 is primarily cleared by the kidn",veltinib-143 is primarily cleared by the kidney. || veltinib-292 is primarily cleared by the kidney. || veltinib-404 is primarily cleared by the kidney.,False
+answerable,correct," 538 daltons
+
+Context: The molecular weight of veltinib-178 is 538 daltons. The half-life of veltin",The molecular weight of veltinib-178 is 538 daltons. || The half-life of veltinib-279 is 80 hours. || veltinib-143 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 80 hours.
+
+Context: The half-life of veltinib-143 is 80 hours.
+Question: What is the half-life of velt",The molecular weight of veltinib-178 is 538 daltons. || The half-life of veltinib-279 is 80 hours. || veltinib-143 is primarily cleared by the kidney.,False
+answerable,fabricates," 80 hours.
+
+Context: The half-life of veltinib-178 is 80 hours. The molecular weight of veltinib-143",The half-life of veltinib-279 is 80 hours. || The molecular weight of veltinib-178 is 538 daltons. || veltinib-143 is primarily cleared by the kidney.,True
+unanswerable,fabricates," By the kidney.
+
+Context: The half-life of veltinib-292 is 80 hours. veltinib-143 is primarily cleared by the",The half-life of veltinib-279 is 80 hours. || veltinib-143 is primarily cleared by the kidney. || veltinib-292 is primarily cleared by the kidney.,False
+answerable,correct," By the kidney.
+
+Context: veltinib-292 is primarily cleared by the kidney. veltinib-143 is primarily cleared by the kidn",veltinib-292 is primarily cleared by the kidney. || veltinib-143 is primarily cleared by the kidney. || veltinib-404 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 80 hours.
+
+Context: veltinib-292 is primarily cleared by the kidney. The half-life of veltinib-292 is 8",veltinib-292 is primarily cleared by the kidney. || The half-life of veltinib-279 is 80 hours. || The molecular weight of veltinib-178 is 538 daltons.,False
+answerable,correct," By the kidney.
+
+Context: veltinib-404 is primarily cleared by the kidney. veltinib-143 is primarily cleared by the kidn",veltinib-404 is primarily cleared by the kidney. || veltinib-143 is primarily cleared by the kidney. || veltinib-292 is primarily cleared by the kidney.,True
+unanswerable,degenerate," By the kidney.
+
+Context: veltinib-404 is primarily cleared by the kidney. veltinib-143 is primarily cleared by the kidn",veltinib-404 is primarily cleared by the kidney. || veltinib-143 is primarily cleared by the kidney. || veltinib-292 is primarily cleared by the kidney.,True
+answerable,correct," By the liver.
+
+Context: veltinib-552 is primarily cleared by the liver. seluparib-552 is primarily cleared by the liver",veltinib-552 is primarily cleared by the liver. || seluparib-552 is primarily cleared by the liver. || veltinib-143 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 538 daltons
+
+Context: veltinib-552 is primarily cleared by the liver. The molecular weight of veltinib-552 is ",veltinib-552 is primarily cleared by the liver. || The molecular weight of veltinib-178 is 538 daltons. || The half-life of seluparib-552 is 13 hours.,False
+answerable,correct," 46 hours.
+
+Context: The half-life of velxaban-152 is 54 hours. The half-life of ribolukast-15",The half-life of velxaban-152 is 54 hours. || The half-life of ribolukast-152 is 16 hours. || The half-life of velxaban-241 is 46 hours.,True
+unanswerable,fabricates," 536 daltons
+
+Question: What is the molecular weight of ribolukast-152?
+Answer: 536 daltons
+
+Question:",The half-life of velxaban-152 is 54 hours. || The molecular weight of velxaban-651 is 536 daltons. || The half-life of ribolukast-152 is 16 hours.,False
+answerable,correct," 46 hours.
+
+Context: The half-life of velxaban-241 is 46 hours. The half-life of velxaban-15",The half-life of velxaban-241 is 46 hours. || The half-life of velxaban-152 is 54 hours. || The molecular weight of velxaban-651 is 536 daltons.,True
+unanswerable,fabricates," By the kidney.
+
+Context: The half-life of velxaban-241 is 46 hours. velxaban-322 is primarily cleared by the",The half-life of velxaban-241 is 46 hours. || velxaban-322 is primarily cleared by the kidney. || velxaban-540 is primarily cleared by the kidney.,False
+answerable,correct," By the kidney.
+
+Context: velxaban-322 is primarily cleared by the kidney. velxaban-540 is primarily cleared by the kidn",velxaban-322 is primarily cleared by the kidney. || velxaban-540 is primarily cleared by the kidney. || velxaban-600 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 46 hours.
+
+Context: velxaban-322 is primarily cleared by the kidney. The half-life of velxaban-241 is 4",velxaban-322 is primarily cleared by the kidney. || The half-life of velxaban-152 is 54 hours. || The half-life of velxaban-241 is 46 hours.,False
+answerable,correct," The kidney.
+
+Context: velxaban-540 is primarily cleared by the kidney. enisartan-540 is primarily cleared by the liver.",velxaban-540 is primarily cleared by the kidney. || enisartan-540 is primarily cleared by the liver. || velxaban-322 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The kidney.
+
+Context: velxaban-540 is primarily cleared by the kidney. enisartan-540 is primarily cleared by the liver.",velxaban-540 is primarily cleared by the kidney. || enisartan-540 is primarily cleared by the liver. || velxaban-322 is primarily cleared by the kidney.,True
+answerable,correct," By the kidney.
+
+Context: velxaban-600 is primarily cleared by the kidney. velxaban-322 is primarily cleared by the kidn",velxaban-600 is primarily cleared by the kidney. || velxaban-322 is primarily cleared by the kidney. || velxaban-540 is primarily cleared by the kidney.,True
+unanswerable,degenerate," By the kidney.
+
+Context: velxaban-600 is primarily cleared by the kidney. velxaban-322 is primarily cleared by the kidn",velxaban-600 is primarily cleared by the kidney. || velxaban-322 is primarily cleared by the kidney. || velxaban-540 is primarily cleared by the kidney.,True
+answerable,correct," 536 daltons
+
+Context: The molecular weight of velxaban-651 is 536 daltons. The half-life of velxab",The molecular weight of velxaban-651 is 536 daltons. || The half-life of velxaban-152 is 54 hours. || The half-life of velxaban-241 is 46 hours.,True
+unanswerable,fabricates," 54 hours.
+
+Context: The half-life of velxaban-651 is 54 hours. The half-life of velxaban-15",The molecular weight of velxaban-651 is 536 daltons. || The half-life of velxaban-152 is 54 hours. || The half-life of velxaban-241 is 46 hours.,False
+answerable,correct," 255 daltons
+
+Context: The molecular weight of zanociclib-447 is 255 daltons. The molecular weight of osucic",The molecular weight of zanociclib-447 is 255 daltons. || The molecular weight of osuciclib-649 is 447 daltons. || The molecular weight of capmagliptin-175 is 291 daltons.,True
+unanswerable,fabricates," 255 daltons
+
+Context: The molecular weight of zanociclib-447 is 255 daltons. The molecular weight of osucic",The molecular weight of zanociclib-447 is 255 daltons. || The molecular weight of osuciclib-649 is 447 daltons. || The molecular weight of capmagliptin-175 is 291 daltons.,False
+answerable,correct," 26 hours.
+
+Context: The half-life of zanogliptin-231 is 26 hours. The molecular weight of enimab-91",The half-life of zanogliptin-231 is 26 hours. || The molecular weight of enimab-917 is 231 daltons. || The molecular weight of zanogliptin-303 is 854 daltons.,True
+unanswerable,fabricates, The half-life of zanogliptin-231 is 26 hours. The molecular weight of enimab-917 is 231 daltons,The half-life of zanogliptin-231 is 26 hours. || The molecular weight of enimab-917 is 231 daltons. || The molecular weight of zanogliptin-303 is 854 daltons.,False
+answerable,fabricates," 854 daltons
+
+Context: The molecular weight of zanogliptin-385 is 805 daltons. The molecular weight of zan",The molecular weight of zanogliptin-303 is 854 daltons. || The molecular weight of zanogliptin-385 is 805 daltons. || The half-life of zanogliptin-231 is 26 hours.,True
+unanswerable,fabricates," It is cleared by the liver.
+
+Context: The molecular weight of zanogliptin-385 is 805 daltons. The half-life of z",The molecular weight of zanogliptin-303 is 854 daltons. || The half-life of zanogliptin-231 is 26 hours. || The molecular weight of zanogliptin-385 is 805 daltons.,False
+answerable,correct," 805 daltons.
+
+Context: The molecular weight of zanogliptin-385 is 805 daltons. The half-life of",The molecular weight of zanogliptin-385 is 805 daltons. || The molecular weight of zanogliptin-303 is 854 daltons. || The half-life of doraprazole-385 is 94 hours.,True
+unanswerable,fabricates," The liver.
+
+Context: The molecular weight of zanogliptin-385 is 805 daltons. doraprazole-385 is",The molecular weight of zanogliptin-385 is 805 daltons. || doraprazole-385 is primarily cleared by the liver. || The half-life of doraprazole-385 is 94 hours.,False
+answerable,correct," The liver.
+
+Context: zanolukast-268 is primarily cleared by the liver. The half-life of zanolukast-908 is 62 hours",zanolukast-268 is primarily cleared by the liver. || The half-life of zanolukast-778 is 62 hours. || The molecular weight of zanolukast-908 is 772 daltons.,True
+unanswerable,fabricates," 772 daltons
+
+Context: zanolukast-268 is primarily cleared by the liver. The molecular weight of zanolukast-778 is ",zanolukast-268 is primarily cleared by the liver. || The molecular weight of zanolukast-908 is 772 daltons. || The half-life of zanolukast-778 is 62 hours.,False
+answerable,fabricates," 62 hours.
+
+Context: The half-life of zanolukast-908 is 62 hours.
+Question: What is the half-life of zanol",The half-life of zanolukast-778 is 62 hours. || nirasartan-778 is primarily cleared by the liver. || The molecular weight of zanolukast-908 is 772 daltons.,True
+unanswerable,fabricates," By the liver.
+
+Context: The half-life of zanolukast-778 is 62 hours. nirasartan-778 is primarily cleared by",The half-life of zanolukast-778 is 62 hours. || nirasartan-778 is primarily cleared by the liver. || zanolukast-268 is primarily cleared by the liver.,True
+answerable,correct," 772 daltons
+
+Context: The molecular weight of zanolukast-908 is 772 daltons. The half-life of capmaxab",The molecular weight of zanolukast-908 is 772 daltons. || The half-life of capmaxaban-908 is 82 hours. || The half-life of zanolukast-778 is 62 hours.,True
+unanswerable,fabricates," The half-life of zanolukast-908 is 82 hours.
+
+Context: The half-life of zanolukast-908 is 82",The molecular weight of zanolukast-908 is 772 daltons. || The half-life of capmaxaban-908 is 82 hours. || The half-life of zanolukast-778 is 62 hours.,False
+answerable,correct," The molecular weight of zanomab-200 is 698 daltons.
+
+Context: The molecular weight of zanomab-200 is 6",The molecular weight of zanomab-200 is 698 daltons. || The molecular weight of lenxaban-688 is 200 daltons. || The molecular weight of zanomab-907 is 393 daltons.,True
+unanswerable,fabricates," The molecular weight of zanomab-200 is 698 daltons.
+
+Context: The molecular weight of zanomab-200 is 6",The molecular weight of zanomab-200 is 698 daltons. || The molecular weight of lenxaban-688 is 200 daltons. || The molecular weight of zanomab-907 is 393 daltons.,False
+answerable,fabricates," By the kidney.
+Question: How is zanomab-764 primarily cleared?
+Answer: By the liver.
+
+The answer to the question is: by",zanomab-419 is primarily cleared by the kidney. || sotostatin-419 is primarily cleared by the kidney. || zanomab-764 is primarily cleared by the liver.,True
+unanswerable,fabricates," 48 hours.
+
+Context: zanomab-419 is primarily cleared by the kidney.
+Question: What is the half-life of sotostatin-4",zanomab-419 is primarily cleared by the kidney. || The half-life of sotostatin-419 is 48 hours. || sotostatin-419 is primarily cleared by the kidney.,False
+answerable,correct," The liver.
+Question: How is zanomab-764 primarily cleared?
+Answer: By the liver.
+Question: How is zanomab-764 primarily",zanomab-764 is primarily cleared by the liver. || zanomab-419 is primarily cleared by the kidney. || The molecular weight of niratinib-156 is 764 daltons.,True
+unanswerable,fabricates," The liver.
+Question: How is zanomab-764 primarily cleared?
+Answer: By the liver.
+Question: How is zanomab-764 primarily",zanomab-764 is primarily cleared by the liver. || zanomab-419 is primarily cleared by the kidney. || The molecular weight of niratinib-156 is 764 daltons.,True
+answerable,correct," 393 daltons.
+
+Context: The molecular weight of zanomab-907 is 393 daltons. The molecular weight of zanom",The molecular weight of zanomab-907 is 393 daltons. || The molecular weight of zanomab-200 is 698 daltons. || zanomab-419 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The kidney.
+
+Context: The molecular weight of zanomab-907 is 393 daltons. zanomab-419 is primarily cleared by",The molecular weight of zanomab-907 is 393 daltons. || zanomab-419 is primarily cleared by the kidney. || zanomab-764 is primarily cleared by the liver.,True
+answerable,correct," The kidney.
+
+Context: zanoparib-456 is primarily cleared by the kidney. The molecular weight of zanoparib-801 is 37",zanoparib-456 is primarily cleared by the kidney. || The molecular weight of zanoparib-801 is 374 daltons. || The half-life of zanoparib-834 is 5 hours.,True
+unanswerable,fabricates," 374 daltons
+
+Context: zanoparib-456 is primarily cleared by the kidney. The molecular weight of zanoparib-801",zanoparib-456 is primarily cleared by the kidney. || The molecular weight of zanoparib-801 is 374 daltons. || The half-life of zanoparib-834 is 5 hours.,False
+answerable,correct," The molecular weight of zanoparib-801 is 374 daltons.
+
+The answer is 374 daltons.
+
+The answer is",The molecular weight of zanoparib-801 is 374 daltons. || The molecular weight of doralukast-429 is 801 daltons. || The molecular weight of lenxaban-548 is 801 daltons.,True
+unanswerable,fabricates," The half-life of zanoparib-801 is 5 hours.
+
+Context: The half-life of zanoparib-801 is 5",The molecular weight of zanoparib-801 is 374 daltons. || zanoparib-456 is primarily cleared by the kidney. || The half-life of zanoparib-834 is 5 hours.,True
+answerable,correct," 5 hours.
+
+Context: The half-life of zanoparib-834 is 5 hours. The molecular weight of zanoparib-801",The half-life of zanoparib-834 is 5 hours. || The molecular weight of zanoparib-801 is 374 daltons. || zanoparib-456 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 5 hours.
+
+Context: The half-life of zanoparib-834 is 5 hours. The molecular weight of zanoparib-801",The half-life of zanoparib-834 is 5 hours. || The molecular weight of zanoparib-801 is 374 daltons. || zanoparib-456 is primarily cleared by the kidney.,False
+answerable,correct," The liver.
+Question: How is zanoprazole-853 primarily cleared?
+Answer: By the liver.
+Question: How is zanoprazole-85",zanoprazole-853 is primarily cleared by the liver. || The molecular weight of capmaprazole-762 is 853 daltons. || capmaciclib-390 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The liver.
+Question: How is zanoprazole-853 primarily cleared?
+Answer: By the liver.
+Question: How is zanoprazole-85",zanoprazole-853 is primarily cleared by the liver. || The molecular weight of capmaprazole-762 is 853 daltons. || capmaciclib-390 is primarily cleared by the kidney.,True
+answerable,fabricates," The liver.
+Question: How is zanosartan-284 primarily cleared?
+Answer: The kidney.
+Question: How is zanosartan-790",zanosartan-177 is primarily cleared by the liver. || zanosartan-284 is primarily cleared by the kidney. || zanosartan-790 is primarily cleared by the liver.,True
+unanswerable,fabricates," 177.
+
+Context: zanosartan-177 is primarily cleared by the liver. zanosartan-284 is primarily cleared by the kidney",zanosartan-177 is primarily cleared by the liver. || zanosartan-284 is primarily cleared by the kidney. || zanosartan-790 is primarily cleared by the liver.,False
+answerable,fabricates," The kidney.
+Question: How is zanosartan-177 primarily cleared?
+Answer: The liver.
+Question: How is zanosartan-790",zanosartan-284 is primarily cleared by the kidney. || zanosartan-177 is primarily cleared by the liver. || zanosartan-790 is primarily cleared by the liver.,True
+unanswerable,fabricates," 83 hours.
+
+Context: zanosartan-284 is primarily cleared by the kidney. The half-life of capmalukast-284 is",zanosartan-284 is primarily cleared by the kidney. || The half-life of capmalukast-284 is 83 hours. || The half-life of capmalukast-284 is 53 hours.,False
+answerable,fabricates," The liver.
+Question: How is zanosartan-177 primarily cleared?
+Answer: The kidney.
+Question: How is zanosartan-284",zanosartan-790 is primarily cleared by the liver. || zanosartan-177 is primarily cleared by the liver. || zanosartan-284 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The liver.
+Question: How is zanosartan-177 primarily cleared?
+Answer: The kidney.
+Question: How is zanosartan-284",zanosartan-790 is primarily cleared by the liver. || zanosartan-177 is primarily cleared by the liver. || zanosartan-284 is primarily cleared by the kidney.,True
+answerable,correct," 9 hours.
+
+Context: The half-life of zanostatin-272 is 9 hours. The half-life of zanostatin-458 is",The half-life of zanostatin-272 is 9 hours. || The half-life of zanostatin-458 is 77 hours. || zanostatin-576 is primarily cleared by the kidney.,True
+unanswerable,fabricates," 9 hours.
+
+Context: The half-life of zanostatin-272 is 9 hours. The half-life of zanostatin-458 is",The half-life of zanostatin-272 is 9 hours. || The half-life of zanostatin-458 is 77 hours. || zanostatin-576 is primarily cleared by the kidney.,False
+answerable,correct," The half-life of zanostatin-458 is 77 hours.
+
+Context: The half-life of zanostatin-458 is 77",The half-life of zanostatin-458 is 77 hours. || The half-life of capmagliptin-458 is 63 hours. || The half-life of capmagliptin-458 is 28 hours.,True
+unanswerable,fabricates," The half-life of zanostatin-458 is 77 hours.
+
+Context: The half-life of zanostatin-458 is 77",The half-life of zanostatin-458 is 77 hours. || The half-life of capmagliptin-458 is 63 hours. || The half-life of capmagliptin-458 is 28 hours.,False
+answerable,fabricates," The kidney.
+Question: How is zanostatin-599 primarily cleared?
+Answer: The liver.
+
+The answer is: The kidney.
+
+The answ",zanostatin-576 is primarily cleared by the kidney. || zanostatin-599 is primarily cleared by the liver. || The half-life of zanostatin-272 is 9 hours.,True
+unanswerable,fabricates," The kidney.
+Question: How is zanostatin-599 primarily cleared?
+Answer: The liver.
+
+The answer is: The kidney.
+
+The answ",zanostatin-576 is primarily cleared by the kidney. || zanostatin-599 is primarily cleared by the liver. || The half-life of zanostatin-272 is 9 hours.,True
+answerable,correct," The liver.
+
+Context: zanostatin-599 is primarily cleared by the liver. velprazole-599 is primarily cleared by the liver",zanostatin-599 is primarily cleared by the liver. || velprazole-599 is primarily cleared by the liver. || zanostatin-576 is primarily cleared by the kidney.,True
+unanswerable,fabricates," The liver.
+
+Context: zanostatin-599 is primarily cleared by the liver. velprazole-599 is primarily cleared by the liver",zanostatin-599 is primarily cleared by the liver. || velprazole-599 is primarily cleared by the liver. || zanostatin-576 is primarily cleared by the kidney.,True
+answerable,fabricates," 563 daltons
+
+Context: The molecular weight of zanotinib-436 is 212 daltons. The molecular weight of zanot",The molecular weight of zanotinib-225 is 563 daltons. || The molecular weight of zanotinib-436 is 212 daltons. || The half-life of zanotinib-364 is 76 hours.,True
+unanswerable,fabricates," The kidney.
+
+Context: The molecular weight of zanotinib-225 is 563 daltons. zanotinib-369 is primarily",The molecular weight of zanotinib-225 is 563 daltons. || zanotinib-369 is primarily cleared by the kidney. || zanotinib-785 is primarily cleared by the kidney.,False
+answerable,correct," The half-life of zanotinib-364 is 76 hours.
+
+Question: What is the half-life of pemisartan-962",The half-life of zanotinib-364 is 76 hours. || The molecular weight of pemisartan-962 is 364 daltons. || The molecular weight of zanotinib-225 is 563 daltons.,True
+unanswerable,fabricates," 563 daltons
+
+Context: The half-life of zanotinib-364 is 76 hours. The molecular weight of pemisartan",The half-life of zanotinib-364 is 76 hours. || The molecular weight of pemisartan-962 is 364 daltons. || The molecular weight of zanotinib-225 is 563 daltons.,False
+answerable,correct," The kidney.
+
+Context: zanotinib-369 is primarily cleared by the kidney.
+Question: How is zanotinib-369 primarily cleare",zanotinib-369 is primarily cleared by the kidney. || zanotinib-785 is primarily cleared by the kidney. || The molecular weight of zanotinib-225 is 563 daltons.,True
+unanswerable,fabricates," 76 hours.
+
+Context: zanotinib-369 is primarily cleared by the kidney. The half-life of zanotinib-225 is",zanotinib-369 is primarily cleared by the kidney. || The half-life of zanotinib-364 is 76 hours. || The molecular weight of zanotinib-225 is 563 daltons.,False
+answerable,fabricates," 212 daltons
+
+Context: The molecular weight of zanotinib-225 is 563 daltons. The molecular weight of zanot",The molecular weight of zanotinib-436 is 212 daltons. || The molecular weight of zanotinib-225 is 563 daltons. || The half-life of zanotinib-364 is 76 hours.,True
+unanswerable,fabricates," The kidney.
+
+Context: The molecular weight of zanotinib-436 is 212 daltons. zanotinib-369 is primarily",The molecular weight of zanotinib-436 is 212 daltons. || zanotinib-369 is primarily cleared by the kidney. || zanotinib-785 is primarily cleared by the kidney.,True
+answerable,correct," The kidney.
+
+Context: zanotinib-785 is primarily cleared by the kidney.
+Question: How is zanotinib-785 primarily cleare",zanotinib-785 is primarily cleared by the kidney. || zanotinib-369 is primarily cleared by the kidney. || The molecular weight of zanotinib-225 is 563 daltons.,True
+unanswerable,fabricates," 563 daltons
+
+Context: zanotinib-785 is primarily cleared by the kidney. The molecular weight of zanotinib-436",zanotinib-785 is primarily cleared by the kidney. || The molecular weight of zanotinib-225 is 563 daltons. || The molecular weight of zanotinib-436 is 212 daltons.,False
+answerable,correct," The liver.
+
+Context: zanoxaban-680 is primarily cleared by the liver. The half-life of zanoxaban-930 is 6",zanoxaban-680 is primarily cleared by the liver. || The half-life of zanoxaban-750 is 17 hours. || The half-life of zanoxaban-930 is 64 hours.,True
+unanswerable,fabricates," The liver.
+
+Context: zanoxaban-680 is primarily cleared by the liver. The half-life of zanoxaban-930 is 6",zanoxaban-680 is primarily cleared by the liver. || The half-life of zanoxaban-750 is 17 hours. || The half-life of zanoxaban-930 is 64 hours.,True
+answerable,fabricates," 64 hours.
+
+Context: The half-life of zanoxaban-750 is 64 hours. The half-life of zanoxaban-",The half-life of zanoxaban-750 is 17 hours. || The half-life of zanoxaban-930 is 64 hours. || zanoxaban-680 is primarily cleared by the liver.,True
+unanswerable,fabricates," The half-life of zanoxaban-750 is 17 hours.
+
+Context: The half-life of zanoxaban-750 is ",The half-life of zanoxaban-750 is 17 hours. || zanoxaban-680 is primarily cleared by the liver. || The half-life of zanoxaban-930 is 64 hours.,False
+answerable,correct," 64 hours.
+
+Context: The half-life of zanoxaban-930 is 64 hours. The half-life of zanoxaban-",The half-life of zanoxaban-930 is 64 hours. || The half-life of zanoxaban-750 is 17 hours. || zanoxaban-680 is primarily cleared by the liver.,True
+unanswerable,fabricates," 64 hours.
+
+Context: The half-life of zanoxaban-930 is 64 hours. The half-life of zanoxaban-",The half-life of zanoxaban-930 is 64 hours. || The half-life of zanoxaban-750 is 17 hours. || zanoxaban-680 is primarily cleared by the liver.,False

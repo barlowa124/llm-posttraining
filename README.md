@@ -96,6 +96,34 @@ Two eval-iteration artifacts are kept visible:
 - Raw generations are preserved (`results/responses_*.csv`) so every rate
   in the table traces to model output.
 
+## Retrieval-augmented eval (`results/rag_eval.json`)
+
+`eval_rag.py` reruns the same held-out eval but replaces the baked Context
+line with top-3 BM25 retrieval over a 1016-doc fact corpus built from the
+committed splits (`config.retrieval.k`). Retrieval itself is perfect at
+this scale: the gold doc lands in the top-3 for 100% of answerable rows.
+
+The result is a negative one for the abstention pipeline: **abstention
+learned on a single clean context does not transfer to retrieved
+context.** With three concatenated docs (the queried entity's other
+attributes plus near-name distractors), every stage degrades:
+
+| Stage | Answerable correct | Unanswerable abstains | Unanswerable fabricates |
+|---|---|---|---|
+| baked context (SFT) | 100% | 100% | 0% |
+| base + RAG | 71% | 0% | 94% |
+| SFT + RAG | 56% | 0% | **99%** |
+| DPO + RAG | 42% | 12% | 78% |
+| GRPO + RAG | 44% | 0% | 90% |
+
+On unanswerable rows the retrieved docs are topically related but lack the
+asked attribute, and the model echoes a related fact instead of abstaining.
+That is the standard production RAG failure (related-but-insufficient
+context induces hallucination), reproduced here on a 135M model with raw
+outputs committed per stage (`results/responses_*_rag.csv`). The fix would
+be retrieval-noisy abstention data in training. It is documented as the
+next step, not done.
+
 ## Caveats
 
 - The task is templated synthetic, and it demonstrates post-training mechanics

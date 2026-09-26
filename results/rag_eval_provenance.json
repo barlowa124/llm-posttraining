@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-09-26T21:19:02.726354+00:00",
+  "git": "a2d8a82287+dirty",
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "pandas": "2.3.3"
+  },
+  "config_sha256": "5d7356b4010fa24802edd4967b5a473729b15da24ef79ab4f0380382ecd6b10a",
+  "inputs": [
+    {
+      "path": "data/processed/eval.parquet",
+      "sha256": "1189ed904a7ac65dabaf7b294e6bce8c1a51bb5d2db6dac1387e1ea798cc6a19"
+    },
+    {
+      "path": "data/processed/sft.parquet",
+      "sha256": "fce39000a49bedff4e5fe74484cc5a99ded1b5b3c1eb051512164342021dbe3a"
+    },
+    {
+      "path": "data/processed/sft.pt",
+      "sha256": "39d2bf9d0bcce65f342394078f4edea05cad6e7cd724cde068445202a6a8be72"
+    },
+    {
+      "path": "data/processed/dpo.pt",
+      "sha256": "6b1143f5cc325311ce3be8f4236103d65b091f8a2ab236bcc46e4e69349cf61d"
+    },
+    {
+      "path": "data/processed/grpo_s105.pt",
+      "sha256": "db5d38697b663405d2466f8f9e354d646f1cced326214bc0aef51ccb03547c42"
+    }
+  ]
+}
