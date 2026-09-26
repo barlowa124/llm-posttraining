@@ -129,7 +129,11 @@ regenerable and gitignored.
 Published at
 [huggingface.co/barlowa/smollm2-135m-abstention-posttrain](https://huggingface.co/barlowa/smollm2-135m-abstention-posttrain)
 — six checkpoint dirs (`sft/`, `dpo/`, `grpo/` + ablations) loadable via
-`AutoModelForCausalLM.from_pretrained(repo, subfolder="sft")`.
+`AutoModelForCausalLM.from_pretrained(repo, subfolder="sft")`. The task
+splits and **raw per-stage generations** are at
+[datasets/barlowa/smollm2-135m-abstention-posttrain-data](https://huggingface.co/datasets/barlowa/smollm2-135m-abstention-posttrain-data)
+— every classified rate in `results/summary.json` traces to an output
+there.
 
 `hf/` contains the HuggingFace packaging: `MODEL_CARD.md` plus
 `upload_hf.py`, which converts each `data/processed/*.pt` into a
