@@ -4,12 +4,12 @@ time.
 
 Corpus: one document per unique fact sentence (entity -> attribute), built
 from the committed sft/eval parquets. Retrieval is BM25 over word tokens —
-no external index; the corpus is a few hundred docs.
+no external index. The corpus is a few hundred docs.
 
 The eval contrast this creates: for `answerable` rows the corpus contains
 the needed fact, so retrieval tests whether the model can *use* grounded
 context. For `unanswerable` rows the corpus contains the queried entity's
-*other* attributes but not the asked one — a harder abstention test than
+*other* attributes but not the asked one. A harder abstention test than
 the original eval (which supplies an unrelated entity's fact), because a
 weak abstainer sees topically related context and has more pressure to
 fabricate.

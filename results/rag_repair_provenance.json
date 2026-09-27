@@ -1,6 +1,6 @@
 {
-  "created_utc": "2026-09-27T00:51:54.233958+00:00",
-  "git": "60df5e2559+dirty",
+  "created_utc": "2026-09-27T01:23:23.901188+00:00",
+  "git": "b951726413+dirty",
   "versions": {
     "torch": "2.8.0",
     "transformers": "4.57.6",
@@ -17,8 +17,8 @@
       "sha256": "fce39000a49bedff4e5fe74484cc5a99ded1b5b3c1eb051512164342021dbe3a"
     },
     {
-      "path": "data/processed/sft_rag.pt",
-      "sha256": "9a62300960e5cfcdec41356c63e3091779921d1ca21a7b4ac83c6739ba759382"
+      "path": "data/processed/sft_mix.pt",
+      "sha256": "5398e3e4fde065a21939de6d7a83a832c0eb45ea573d41971b587dea287efc29"
     }
   ]
 }

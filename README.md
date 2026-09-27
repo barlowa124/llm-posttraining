@@ -146,6 +146,28 @@ constructions — the original baked eval and the retrieved-context eval —
 so the artifact answers whether the fix recovers abstention under
 retrieval and at what cost to clean-context behavior.
 
+Measured results (`results/rag_repair.json`, `rag_mix_repair.json`):
+
+| Stage | Clean unans. abstain | RAG unans. abstain | RAG true fabricate* |
+|---|---|---|---|
+| SFT (clean-trained) | 100% | 0% | ~81% |
+| SFT-rag (retrieval-trained) | **0%** | 61% | **0%** |
+| SFT-mix (clean + retrieved) | **100%** | 61% | **0%** |
+
+\* after the label-noise correction: every "fabricate" and "degenerate"
+label on unanswerable rows was a verbatim echo of a retrieved doc that
+actually answered the question (31/80 rows were secretly answerable).
+De-noised, the retrieval-trained models are exactly context-faithful:
+they abstain on precisely the 49 truly-unanswerable rows.
+
+Two real findings fall out. First, the repair works but only on the
+distribution it was trained on: retrieval-noise SFT alone traded
+clean-context abstention (100% → 0%) for retrieval abstention, so the
+mixed set (clean + retrieved, 1920 rows) is what holds both regimes.
+Second, the eval's "unanswerable" label is noisy under retrieval: the
+corpus can contain the asked attribute, and `rag_repair.py` reports that
+correction as a measured field, not a footnote.
+
 ## Caveats
 
 - The task is templated synthetic, and it demonstrates post-training mechanics

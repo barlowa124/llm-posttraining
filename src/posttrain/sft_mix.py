@@ -1,7 +1,7 @@
 """SFT on both context regimes: the original baked-context training set
 concatenated with its retrieval-rewritten counterpart (sft_rag), so the
 answer/abstain supervision holds under clean context AND retrieved
-context rather than trading one for the other.
+context, so one checkpoint covers both regimes.
 
     PYTHONPATH=src python -m posttrain.sft_mix data/processed/sft.parquet \
         data/processed/sft_mix.parquet data/processed/sft_mix.pt
