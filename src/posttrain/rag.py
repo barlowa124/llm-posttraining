@@ -69,7 +69,7 @@ def build_corpus(sft_parquet: str, eval_parquet: str) -> list:
     """Unique fact sentences from the committed splits.
 
     Doc = {"entity": e, "text": fact}. eval rows contribute their `gold`
-    sentence for answerable items (the fact a deployed KB would hold);
+    sentence for answerable items (the fact a deployed KB would hold).
     unanswerable rows' gold is the abstain phrase, which is not a fact and
     is skipped.
     """
@@ -95,6 +95,68 @@ def rewrite_prompt(prompt: str, docs: list) -> str:
     """Swap the prompt's Context line for the retrieved documents."""
     ctx = " ".join(d["text"] for d in docs) or "(no documents retrieved)"
     return CTX_RE.sub(f"Context: {ctx}\nQuestion:", prompt, count=1)
+
+
+_Q_STOP = {"what", "is", "the", "of", "how", "primarily", "by", "a",
+           "an", "does", "do", "much", "many"}
+
+
+def _doc_answers(doc_text: str, entity: str, question: str) -> bool:
+    """Whether a retrieved doc states the attribute the question asks for
+    the queried entity: same entity mention and the question's content
+    tokens all present in the doc."""
+    if entity not in doc_text:
+        return False
+    entity_toks = set(tokenize(entity))
+    q_toks = set(tokenize(question)) - entity_toks - _Q_STOP
+    return bool(q_toks) and q_toks <= set(tokenize(doc_text))
+
+
+def build_sft_rag_dataframe(train_df: pd.DataFrame, corpus: list,
+                            k: int) -> pd.DataFrame:
+    """Rebuild an SFT frame with each prompt's baked Context line replaced
+    by k BM25-retrieved docs, and completions made consistent with what
+    retrieval supplies: "answer iff the retrieved context answers".
+
+    - answerable row whose gold fact was retrieved: keep the gold
+      completion
+    - answerable row whose gold fact was missed: flip to abstain (the
+      context does not support the answer)
+    - unanswerable row where retrieval surfaced a same-entity doc that
+      answers the question: rescue the completion to that doc's fact
+    - otherwise keep the abstain completion
+
+    Callers should pass a train-only corpus so no held-out entity fact
+    leaks into a training context."""
+    from posttrain.data import ABSTAIN
+
+    index = BM25(corpus)
+    out = train_df.copy()
+    prompts, completions, n_retrieved, flipped = [], [], [], []
+    for _, r in out.iterrows():
+        q = r["prompt"].split("Question:")[-1].replace("Answer:", "").strip()
+        docs = index.retrieve(f'{r["entity"]} {q}', k)
+        prompts.append(rewrite_prompt(r["prompt"], docs))
+        n_retrieved.append(len(docs))
+        completion = r["completion"]
+        if r["kind"] == "answerable":
+            hit = any(d["text"] == str(r["gold"]).strip() for d in docs)
+            flipped.append(not hit)
+            if not hit:
+                completion = " " + ABSTAIN
+        else:
+            hit_doc = next((d for d in docs
+                            if _doc_answers(d["text"], r["entity"], q)),
+                           None)
+            flipped.append(hit_doc is not None)
+            if hit_doc is not None:
+                completion = " " + hit_doc["text"]
+        completions.append(completion)
+    out["prompt"] = prompts
+    out["completion"] = completions
+    out["n_retrieved"] = n_retrieved
+    out["completion_flipped"] = flipped
+    return out.reset_index(drop=True)
 
 
 def retrieval_hit(docs: list, gold_value: str) -> bool:

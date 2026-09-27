@@ -120,9 +120,31 @@ On unanswerable rows the retrieved docs are topically related but lack the
 asked attribute, and the model echoes a related fact instead of abstaining.
 That is the standard production RAG failure (related-but-insufficient
 context induces hallucination), reproduced here on a 135M model with raw
-outputs committed per stage (`results/responses_*_rag.csv`). The fix would
-be retrieval-noisy abstention data in training. It is documented as the
-next step, not done.
+outputs committed per stage (`results/responses_*_rag.csv`).
+
+Label-noise caveat on the table above: for 31 of the 80 "unanswerable"
+eval rows the corpus contains the answer, because the entity's
+answerable eval row shares the fact template. The classifier still scores
+unanswerable rows as abstain-or-fail, so a correct grounded echo counts
+as "fabricates". For SFT + RAG, 14 of the 79 labeled fabrications were
+verbatim retrieved facts — the true fabrication rate is ~81%, not 99%.
+The failure remains; the number was overstated. `rag_repair.py` reports
+this correction alongside its own eval.
+
+## Retrieval-noise repair (`results/rag_repair.json`)
+
+`sft_rag.py` rebuilds the SFT set with the baked Context line replaced by
+top-3 retrieval over a **train-only** corpus (held-out facts cannot leak
+into a context), and makes the supervision consistent with what retrieval
+supplies: an answerable row whose gold fact is not retrieved flips to an
+abstain target, and an unanswerable row where retrieval surfaced the asked
+attribute is rescued to that fact. The model then trains from base with
+the same schedule (`posttrain.sft`).
+
+`rag_repair.py` scores the resulting checkpoint under both context
+constructions — the original baked eval and the retrieved-context eval —
+so the artifact answers whether the fix recovers abstention under
+retrieval and at what cost to clean-context behavior.
 
 ## Caveats
 

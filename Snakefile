@@ -6,6 +6,8 @@ rule all:
     input:
         "results/summary.json",
         "results/rag_eval.json",
+        "results/rag_repair.json",
+        "results/rag_mix_repair.json",
 
 
 rule data:
@@ -71,3 +73,49 @@ rule eval_rag:
     shell:
         "{PP} {PY} -m posttrain.eval_rag "
         "{input.ev} {input.sft_df} {output}"
+
+
+rule sft_rag:
+    input:
+        "data/processed/sft.parquet",
+    output:
+        parquet="data/processed/sft_rag.parquet",
+        model="data/processed/sft_rag.pt",
+    shell:
+        "{PP} {PY} -m posttrain.sft_rag "
+        "{input} {output.parquet} {output.model}"
+
+
+rule rag_repair:
+    input:
+        ev="data/processed/eval.parquet",
+        sft_df="data/processed/sft.parquet",
+        model="data/processed/sft_rag.pt",
+    output:
+        "results/rag_repair.json",
+    shell:
+        "{PP} {PY} -m posttrain.rag_repair "
+        "{input.ev} {input.sft_df} {input.model} {output}"
+
+
+rule sft_mix:
+    input:
+        "data/processed/sft.parquet",
+    output:
+        parquet="data/processed/sft_mix.parquet",
+        model="data/processed/sft_mix.pt",
+    shell:
+        "{PP} {PY} -m posttrain.sft_mix "
+        "{input} {output.parquet} {output.model}"
+
+
+rule rag_mix_repair:
+    input:
+        ev="data/processed/eval.parquet",
+        sft_df="data/processed/sft.parquet",
+        model="data/processed/sft_mix.pt",
+    output:
+        "results/rag_mix_repair.json",
+    shell:
+        "{PP} {PY} -m posttrain.rag_repair "
+        "{input.ev} {input.sft_df} {input.model} {output}"
