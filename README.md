@@ -219,3 +219,7 @@ HF_TOKEN=hf_... PYTHONPATH=src .venv/bin/python hf/upload_hf.py \
     --repo <user>/smollm2-135m-abstention-posttrain --include-ablations
 # --dry-run stages locally under data/processed/hf_repo/ without pushing
 ```
+
+## Related work
+
+- [oncology-coscientist](https://github.com/barlowa124/oncology-coscientist) enforces the abstention discipline this repo trains for: its verifier rejects fabricated numbers rather than trusting the model to abstain.
