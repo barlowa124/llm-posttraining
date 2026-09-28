@@ -15,7 +15,7 @@ tags:
 A mechanics demonstration of the full post-training arc on a small LM:
 supervised fine-tuning, hand-rolled DPO, and GRPO repair, on a synthetic
 abstention-vs-fabrication task. The value is the *measured failure and
-recovery*, not the model's capability — the task is templated synthetic
+recovery*, not the model's capability. The task is templated synthetic
 pharmacology facts.
 
 Source: https://github.com/barlowa124/llm-posttraining
@@ -34,13 +34,13 @@ Source: https://github.com/barlowa124/llm-posttraining
 ## The finding these weights encode
 
 - DPO at too-aggressive lr collapses *deployed* behavior while train
-  metrics look fine — 95% degenerate outputs on held-out unanswerable
+  metrics look fine. 95% degenerate outputs on held-out unanswerable
   prompts at 100% train preference accuracy.
 - Binary ±1 rewards give GRPO **zero gradient in both regimes**: a
-  saturated policy rolls all +1s, a collapsed policy all −1s; no
+  saturated policy rolls all +1s, a collapsed policy all −1s. No
   within-group variance, no advantage, no update.
 - A shaped reward tier (partial credit for the right shape of wrong
-  answer) creates variance in the middle regime only — 8 gradient steps
+  answer) creates variance in the middle regime only. 8 gradient steps
   repaired held-out abstention 5% → 100%.
 - The same GRPO applied to a healthy policy is provably inert: 60/60
   skipped steps, bit-identical checkpoint.
@@ -58,6 +58,6 @@ tok = AutoTokenizer.from_pretrained(
 
 ## Scope
 
-Synthetic single-task training; one seed, one temperature, one group
-size for the main run. Not a capability model, not for domain use —
+Synthetic single-task training. One seed, one temperature, one group
+size for the main run. Not a capability model, not for domain use.
 this is a documented post-training failure-and-repair artifact.

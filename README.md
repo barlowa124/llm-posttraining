@@ -69,7 +69,7 @@ The RL result, and the subtler one underneath:
   is what creates usable variance at the operating temperature. Even so,
   52/60 steps still skipped. (Measured caveat: raising temperature
   restores variance too, and a T=2.5 probe produces mixed groups on both
-  checkpoints — `results/reward_variance_probe.json`, produced by
+  checkpoints (`results/reward_variance_probe.json`, produced by
   `python -m posttrain.probe_variance`. Shaping is not the *only* fix.
   It is the one that works without degrading rollout quality.)
 
@@ -127,8 +127,8 @@ eval rows the corpus contains the answer, because the entity's
 answerable eval row shares the fact template. The classifier still scores
 unanswerable rows as abstain-or-fail, so a correct grounded echo counts
 as "fabricates". For SFT + RAG, 14 of the 79 labeled fabrications were
-verbatim retrieved facts — the true fabrication rate is ~81%, not 99%.
-The failure remains; the number was overstated. `rag_repair.py` reports
+verbatim retrieved facts. The true fabrication rate is ~81%, not 99%.
+The failure remains. The number was overstated. `rag_repair.py` reports
 this correction alongside its own eval.
 
 ## Retrieval-noise repair (`results/rag_repair.json`)
@@ -142,7 +142,7 @@ attribute is rescued to that fact. The model then trains from base with
 the same schedule (`posttrain.sft`).
 
 `rag_repair.py` scores the resulting checkpoint under both context
-constructions — the original baked eval and the retrieved-context eval —
+constructions (the original baked eval and the retrieved-context eval),
 so the artifact answers whether the fix recovers abstention under
 retrieval and at what cost to clean-context behavior.
 
@@ -156,7 +156,7 @@ Measured results (`results/rag_repair.json`, `rag_mix_repair.json`):
 
 \* after the label-noise correction: every "fabricate" and "degenerate"
 label on unanswerable rows was a verbatim echo of a retrieved doc that
-actually answered the question (31/80 rows were secretly answerable).
+did answer the question (31/80 rows were secretly answerable).
 De-noised, the retrieval-trained models are exactly context-faithful:
 they abstain on precisely the 49 truly-unanswerable rows.
 
@@ -200,11 +200,11 @@ regenerable and gitignored.
 
 Published at
 [huggingface.co/barlowa/smollm2-135m-abstention-posttrain](https://huggingface.co/barlowa/smollm2-135m-abstention-posttrain)
-— six checkpoint dirs (`sft/`, `dpo/`, `grpo/` + ablations) loadable via
+. Six checkpoint dirs (`sft/`, `dpo/`, `grpo/` + ablations) loadable via
 `AutoModelForCausalLM.from_pretrained(repo, subfolder="sft")`. The task
 splits and **raw per-stage generations** are at
 [datasets/barlowa/smollm2-135m-abstention-posttrain-data](https://huggingface.co/datasets/barlowa/smollm2-135m-abstention-posttrain-data)
-— every classified rate in `results/summary.json` traces to an output
+. Every classified rate in `results/summary.json` traces to an output
 there.
 
 `hf/` contains the HuggingFace packaging: `MODEL_CARD.md` plus
