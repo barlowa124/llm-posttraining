@@ -22,6 +22,16 @@ grpo:                # RL post-training from the SFT checkpoint
   max_new: 40
   temperature: 1.0
 
+grpo_env:            # verifiable-reward env (verifiable_env.py), same shape
+  steps: 40
+  n_prompts: 200     # generated arithmetic prompt pool
+  prompts_per_step: 4
+  n_samples: 6
+  lr: 0.00002
+  kl_coef: 0.05
+  max_new: 40
+  temperature: 1.0
+
 data:
   n_entities: 400         # templated pharmacology facts
   n_answerable_per_entity: 2

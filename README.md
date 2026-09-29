@@ -101,6 +101,20 @@ Two measured ablations (`results/grpo_ablations.json`):
   find. The zero-signal finding cuts both ways. RL can't hurt this
   policy, but only because it can't touch it at all.
 
+The same GRPO machinery also runs against a *verifiable* reward, not
+just the eval classifier. `verifiable_env.py` generates single-operation
+arithmetic word problems (lab-flavored, operands <= 20) and the reward
+is a programmatic check on the response's last integer: +1 correct, 0 a
+wrong number, -1 no number. Nothing in the check touches a model.
+
+Result from `data/processed/sft.pt` (40 steps, k=6, T=1.0,
+`results/env_grpo_log.csv`): mean reward -0.05 over the first 10
+gradient steps, 0.00 over the last 10, with 30/40 steps no-signal.
+Honest read: the 135M policy learns to emit *a* number almost
+immediately (reward stops being negative fast) but arithmetic
+correctness stays at chance — exactly what you'd predict at this scale
+and budget, and the loop mechanics are the artifact, not the math.
+
 Two eval-iteration artifacts are kept visible:
 
 - The first classifier required the full gold sentence as substring and
