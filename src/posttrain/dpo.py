@@ -95,9 +95,9 @@ def main(dpo_parquet: str, sft_model: str, out_model: str):
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
     policy = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
-    policy.load_state_dict(torch.load(sft_model))
+    policy.load_state_dict(torch.load(sft_model, weights_only=True))
     ref = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
-    ref.load_state_dict(torch.load(sft_model))
+    ref.load_state_dict(torch.load(sft_model, weights_only=True))
     pairs = pd.read_parquet(dpo_parquet)
     dpo_train(policy, ref, tok, pairs, cfg, out_model)
     print(f"saved {out_model}")

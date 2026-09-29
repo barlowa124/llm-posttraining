@@ -57,7 +57,7 @@ def main(eval_parquet: str, sft_parquet: str, model_path: str,
         tok.pad_token = tok.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
-    model.load_state_dict(torch.load(model_path, map_location="cpu"))
+    model.load_state_dict(torch.load(model_path, map_location="cpu", weights_only=True))
     model.eval()
 
     ev = pd.read_parquet(eval_parquet)

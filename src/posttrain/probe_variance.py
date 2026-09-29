@@ -88,7 +88,7 @@ def main() -> int:
         if not path:
             p.error(f"checkpoint spec {spec!r} needs label=path")
         policy = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
-        policy.load_state_dict(torch.load(path))
+        policy.load_state_dict(torch.load(path, weights_only=True))
         policy.eval()
         for temp in args.temperatures:
             # same seed for every checkpoint at a given temperature: groups

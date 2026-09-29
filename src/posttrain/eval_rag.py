@@ -46,7 +46,7 @@ def main(eval_parquet: str, sft_parquet: str, out_json: str):
             continue
         model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
         if ckpt:
-            model.load_state_dict(torch.load(ckpt, map_location="cpu"))
+            model.load_state_dict(torch.load(ckpt, map_location="cpu", weights_only=True))
         model.eval()
         result[stage], rdf = eval_rag(model, tok, ev, corpus, k)
         responses[stage] = rdf

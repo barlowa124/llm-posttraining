@@ -110,7 +110,7 @@ def main(eval_parquet: str, sft_model: str, dpo_model: str, out_json: str,
     for stage, ckpt in stages:
         model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
         if ckpt:
-            model.load_state_dict(torch.load(ckpt))
+            model.load_state_dict(torch.load(ckpt, weights_only=True))
         model.eval()
         result[stage], rdf = eval_stage(model, tok, ev)
         responses[stage] = rdf

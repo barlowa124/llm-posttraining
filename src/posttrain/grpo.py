@@ -129,9 +129,9 @@ def train_grpo(rl_path: str, init_ckpt: str, ref_ckpt: str, out_path: str,
     max_len = cfg["model"]["max_len"]
 
     policy = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
-    policy.load_state_dict(torch.load(init_ckpt))
+    policy.load_state_dict(torch.load(init_ckpt, weights_only=True))
     ref = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"])
-    ref.load_state_dict(torch.load(ref_ckpt))
+    ref.load_state_dict(torch.load(ref_ckpt, weights_only=True))
     ref.eval()
     for p in ref.parameters():
         p.requires_grad_(False)
