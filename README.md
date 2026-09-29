@@ -9,6 +9,20 @@ Each stage is measured before and after on held-out entities.
 SFT -> DPO -> GRPO -> four-stage evaluation on `SmolLM2-135M` (base,
 CPU-trainable).
 
+
+## Where this sits in the portfolio
+
+`llm-posttraining` is the **training-stage behavior work** repo: SFT, hand-rolled DPO, and hand-rolled GRPO on a small open LM trained on answer-or-abstain behavior, measured before and after on held-out entities. Sibling repos:
+[trust-tools](https://github.com/barlowa124/trust-tools) (agent security
+and evals), [bio-qc](https://github.com/barlowa124/bio-qc) (lab-data QC
+pipelines), [lab-informatics](https://github.com/barlowa124/lab-informatics)
+(lab data plumbing and integrity),
+[llm-posttraining](https://github.com/barlowa124/llm-posttraining)
+(training-stage behavior work),
+[protein-ml](https://github.com/barlowa124/protein-ml) (protein fitness
+ML), and [mol-ml](https://github.com/barlowa124/mol-ml) (small-molecule
+ML).
+
 ## Design
 
 - **Task (synthetic by construction)**: pharmacology-flavored QA over
