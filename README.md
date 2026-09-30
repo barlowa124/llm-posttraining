@@ -72,9 +72,11 @@ responses, and the claims check live under `evals/results/`; every
 number in the report re-derives from `eval_stock.json` via the vendored
 claims verifier (third portfolio consumer, digest-pinned).
 
-Reproduce:
+Reproduce (`data/processed/` is gitignored, so generate the eval set
+first via the DAG's data stage, then run the eval):
 
 ```bash
+.venv/bin/snakemake -j1 data/processed/eval.parquet
 PYTHONPATH=src:evals .venv/bin/python evals/run_stock_eval.py
 ```
 

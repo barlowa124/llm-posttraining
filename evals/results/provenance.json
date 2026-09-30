@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-09-30T19:36:53.689888+00:00",
+  "git": "08e282aad8+dirty",
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.6",
+    "pandas": "2.3.3"
+  },
+  "config_sha256": "2772159fd1e76f1c0626353ddd47688a93b0f984298766e07e04c9df6f01c533",
+  "inputs": [
+    {
+      "path": "data/processed/eval.parquet",
+      "sha256": "1189ed904a7ac65dabaf7b294e6bce8c1a51bb5d2db6dac1387e1ea798cc6a19"
+    }
+  ]
+}

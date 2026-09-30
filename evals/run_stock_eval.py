@@ -26,6 +26,7 @@ sys.path.insert(0, "evals")
 from claims import flatten_results, verify_markdown  # noqa: E402
 
 from posttrain.evaluate import eval_stage  # noqa: E402
+from posttrain.provenance import write_manifest  # noqa: E402
 
 
 def _slug(name: str) -> str:
@@ -75,6 +76,11 @@ def main(report_only: bool = False) -> None:
     }
     with open(results_dir / "eval_stock.json", "w") as f:
         json.dump(out, f, indent=2)
+    write_manifest(
+        str(results_dir / "provenance.json"),
+        inputs=[cfg["eval_parquet"]]
+        + [m["name"] for m in cfg["models"]],
+    )
     write_report(out, ev, cfg)
     print("wrote", results_dir / "eval_stock.json")
 
