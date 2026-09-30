@@ -1,0 +1,47 @@
+{
+  "benchmark": "single-process forward+backward step time",
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "hardware": {
+    "machine": "arm64",
+    "device_note": "mps = Apple Silicon GPU via Metal Performance Shaders"
+  },
+  "torch": "2.8.0",
+  "runs": [
+    {
+      "device": "cpu",
+      "n_params": 134515008,
+      "batch": 8,
+      "seq_len": 160,
+      "timed_steps": 6,
+      "step_times_s": [
+        2.9526,
+        2.8815,
+        3.7021,
+        3.7724,
+        3.9769,
+        5.3055
+      ],
+      "mean_step_s": 3.7652,
+      "samples_per_s": 2.12,
+      "final_loss": 12.353764533996582
+    },
+    {
+      "device": "mps",
+      "n_params": 134515008,
+      "batch": 8,
+      "seq_len": 160,
+      "timed_steps": 6,
+      "step_times_s": [
+        0.961,
+        0.955,
+        0.9679,
+        0.9739,
+        0.9661,
+        0.9965
+      ],
+      "mean_step_s": 0.9701,
+      "samples_per_s": 8.25,
+      "final_loss": 12.353765487670898
+    }
+  ]
+}

@@ -230,6 +230,12 @@ an early uncapped run measured ~21x slowdown at ws=2 before per-rank
 thread caps. On a multi-GPU box the same code runs with `nccl` and the
 scaling direction flips, but that is not measured here.
 
+A single-process device comparison lives next to it
+(`posttrain.scaling_device`, `results/scaling/device.json`). Same model,
+same batch: CPU 3.77 s/step vs MPS (Apple Silicon GPU) 0.97 s/step —
+about 3.9x, which is what Metal can actually deliver for a 135M model at
+this batch size.
+
 ## Caveats
 
 - The task is templated synthetic, and it demonstrates post-training mechanics
