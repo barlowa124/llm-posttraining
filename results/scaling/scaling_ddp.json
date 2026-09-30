@@ -1,0 +1,81 @@
+{
+  "benchmark": "ddp forward+backward, gloo backend",
+  "model": "HuggingFaceTB/SmolLM2-135M",
+  "hardware": {
+    "machine": "arm64",
+    "cpu": "arm",
+    "physical_cores": 10,
+    "device": "cpu"
+  },
+  "torch": "2.8.0",
+  "backend": "gloo",
+  "runs": [
+    {
+      "world_size": 1,
+      "n_params": 134515008,
+      "batch_per_rank": 8,
+      "seq_len": 160,
+      "timed_steps": 8,
+      "step_times_s": [
+        3.6565,
+        2.7922,
+        3.3154,
+        2.9222,
+        3.0901,
+        3.5157,
+        3.1094,
+        2.7917
+      ],
+      "mean_step_s": 3.1491,
+      "samples_per_s": 2.54,
+      "final_loss": 12.140514373779297,
+      "threads_per_rank": 10,
+      "wall_s": 36.41
+    },
+    {
+      "world_size": 2,
+      "n_params": 134515008,
+      "batch_per_rank": 8,
+      "seq_len": 160,
+      "timed_steps": 8,
+      "step_times_s": [
+        10.7538,
+        7.5041,
+        11.4974,
+        18.5582,
+        17.0199,
+        15.6322,
+        8.4008,
+        8.2048
+      ],
+      "mean_step_s": 12.1964,
+      "samples_per_s": 1.31,
+      "final_loss": 12.060090065002441,
+      "threads_per_rank": 5,
+      "wall_s": 118.93
+    },
+    {
+      "world_size": 4,
+      "n_params": 134515008,
+      "batch_per_rank": 8,
+      "seq_len": 160,
+      "timed_steps": 8,
+      "step_times_s": [
+        26.6596,
+        22.5476,
+        22.7662,
+        28.3822,
+        28.504,
+        24.9035,
+        26.1928,
+        32.528
+      ],
+      "mean_step_s": 26.5605,
+      "samples_per_s": 1.2,
+      "final_loss": 12.082375526428223,
+      "threads_per_rank": 2,
+      "wall_s": 499.13
+    }
+  ],
+  "scope": "single-socket CPU DDP; demonstrates the mechanism and measures sync overhead. Not multi-GPU evidence."
+}

@@ -1,0 +1,21 @@
+{
+  "world_size": 4,
+  "n_params": 134515008,
+  "batch_per_rank": 8,
+  "seq_len": 160,
+  "timed_steps": 8,
+  "step_times_s": [
+    26.6596,
+    22.5476,
+    22.7662,
+    28.3822,
+    28.504,
+    24.9035,
+    26.1928,
+    32.528
+  ],
+  "mean_step_s": 26.5605,
+  "samples_per_s": 1.2,
+  "final_loss": 12.082375526428223,
+  "threads_per_rank": 2
+}

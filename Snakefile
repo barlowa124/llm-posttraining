@@ -119,3 +119,12 @@ rule rag_mix_repair:
     shell:
         "{PP} {PY} -m posttrain.rag_repair "
         "{input.ev} {input.sft_df} {input.model} {output}"
+
+
+# Not part of `all` — a benchmark, not a pipeline stage.
+rule scaling_ddp:
+    output:
+        "results/scaling/scaling_ddp.json",
+    shell:
+        "{PP} {PY} -m posttrain.scaling_ddp "
+        "--world-sizes 1 2 4 --results-dir results/scaling"

@@ -196,6 +196,40 @@ Second, the eval's "unanswerable" label is noisy under retrieval: the
 corpus can contain the asked attribute, and `rag_repair.py` reports that
 correction as a measured field, not a footnote.
 
+## Scaling benchmark (`results/scaling/scaling_ddp.json`)
+
+`posttrain.scaling_ddp` runs the real SmolLM2-135M forward+backward under
+`torch.distributed` with DistributedDataParallel (process group init,
+DistributedSampler partitioning, gradient all-reduce in backward), timed
+per-step across world sizes.
+
+Honest scope: gloo backend on a single CPU socket (Apple M4, 10 cores).
+This exercises the same code path multi-GPU training uses, and the
+measured overhead-vs-parallelism trade-off is real. It is not a multi-GPU
+speedup claim.
+
+```bash
+PYTHONPATH=src .venv/bin/python -m posttrain.scaling_ddp --world-sizes 1 2 4
+.venv/bin/snakemake scaling_ddp     # via the DAG, results land in results/scaling/
+```
+
+Measured on this machine (Apple M4, 10 cores, torch 2.8.0, 8 timed steps
+at batch 8/seq 160 per rank):
+
+| world_size | threads/rank | mean step | samples/s |
+|---|---|---|---|
+| 1 | 10 | 3.15 s | 2.54 |
+| 2 | 5 | 12.20 s | 1.31 |
+| 4 | 2 | 26.56 s | 1.20 |
+
+Scaling is negative on this hardware: splitting a fixed CPU budget across
+ranks loses more to intra-op threading than it gains from parallel
+sampling. The mechanism is still real (process group, partitioned
+sampler, gradient all-reduce, identical final losses across ranks), and
+an early uncapped run measured ~21x slowdown at ws=2 before per-rank
+thread caps. On a multi-GPU box the same code runs with `nccl` and the
+scaling direction flips, but that is not measured here.
+
 ## Caveats
 
 - The task is templated synthetic, and it demonstrates post-training mechanics
