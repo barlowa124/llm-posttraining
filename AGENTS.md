@@ -12,3 +12,8 @@
 - Run `PYTHONPATH=src .venv/bin/python -m pytest tests/ -q` and
   `.venv/bin/snakemake -n` after changes. Snakemake does not track source
   edits — use `-F` to force reruns.
+- `evals/run_stock_eval.py` evaluates stock open-weights models on the
+  same abstention suite; `EVAL_REPORT.md` is generated from
+  `evals/results/eval_stock.json` and every number in it must bind via
+  `evals/claims.py` (vendored; digest pinned with bio-qc). Regenerate
+  with `--report-only` after result JSON changes.

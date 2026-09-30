@@ -1,0 +1,48 @@
+{
+  "eval": "abstention_eval",
+  "n_prompts": 160,
+  "n_answerable": 80,
+  "n_unanswerable": 80,
+  "protocol": "greedy decode, raw completion prompt, classify() abstains/correct/degenerate/fabricates",
+  "models": {
+    "smollm2_135m_instruct": {
+      "name": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "license": "Apache-2.0",
+      "params_m": 135,
+      "answerable": {
+        "n": 80,
+        "correct": 0.625,
+        "abstains": 0.0,
+        "degenerate": 0.0,
+        "fabricates": 0.375
+      },
+      "unanswerable": {
+        "n": 80,
+        "correct": 0.0,
+        "abstains": 0.0,
+        "degenerate": 0.0125,
+        "fabricates": 0.9875
+      }
+    },
+    "qwen2.5_0.5b_instruct": {
+      "name": "Qwen/Qwen2.5-0.5B-Instruct",
+      "license": "Apache-2.0",
+      "params_m": 494,
+      "answerable": {
+        "n": 80,
+        "correct": 0.725,
+        "abstains": 0.0,
+        "degenerate": 0.0,
+        "fabricates": 0.275
+      },
+      "unanswerable": {
+        "n": 80,
+        "correct": 0.0,
+        "abstains": 0.8875,
+        "degenerate": 0.0,
+        "fabricates": 0.1125
+      }
+    }
+  },
+  "max_new": 40
+}

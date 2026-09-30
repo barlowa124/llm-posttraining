@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "n_claims": 18,
+  "claims": [
+    {
+      "token": "160",
+      "bound_to": "eval_stock.n_prompts",
+      "context": "nchmark ranking.  Each of the 160 prompts (80 answerable, 80 un"
+    },
+    {
+      "token": "80",
+      "bound_to": "eval_stock.n_answerable",
+      "context": "ng.  Each of the 160 prompts (80 answerable, 80 unanswerable)"
+    },
+    {
+      "token": "80",
+      "bound_to": "eval_stock.n_answerable",
+      "context": "e 160 prompts (80 answerable, 80 unanswerable) is judged under"
+    },
+    {
+      "token": "40",
+      "bound_to": "eval_stock.max_new",
+      "context": "ct/degenerate/fabricates, max 40 new tokens per response.  ##"
+    },
+    {
+      "token": "135",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.params_m",
+      "context": "M-Instruct (Apache license) | 135 | 0.625 | 0.375 | 0 | 0.9875 |"
+    },
+    {
+      "token": "0.625",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.answerable.correct",
+      "context": "ruct (Apache license) | 135 | 0.625 | 0.375 | 0 | 0.9875 | | Qwen/"
+    },
+    {
+      "token": "0.375",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.answerable.fabricates",
+      "context": "ache license) | 135 | 0.625 | 0.375 | 0 | 0.9875 | | Qwen/Qwen2.5-"
+    },
+    {
+      "token": "0",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.answerable.abstains",
+      "context": "ense) | 135 | 0.625 | 0.375 | 0 | 0.9875 | | Qwen/Qwen2.5-0.5B"
+    },
+    {
+      "token": "0.9875",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.unanswerable.fabricates",
+      "context": ") | 135 | 0.625 | 0.375 | 0 | 0.9875 | | Qwen/Qwen2.5-0.5B-Instruct"
+    },
+    {
+      "token": "494",
+      "bound_to": "eval_stock.models.qwen2.5_0.5b_instruct.params_m",
+      "context": "B-Instruct (Apache license) | 494 | 0.725 | 0.275 | 0.8875 | 0.1"
+    },
+    {
+      "token": "0.725",
+      "bound_to": "eval_stock.models.qwen2.5_0.5b_instruct.answerable.correct",
+      "context": "ruct (Apache license) | 494 | 0.725 | 0.275 | 0.8875 | 0.1125 |  O"
+    },
+    {
+      "token": "0.275",
+      "bound_to": "eval_stock.models.qwen2.5_0.5b_instruct.answerable.fabricates",
+      "context": "ache license) | 494 | 0.725 | 0.275 | 0.8875 | 0.1125 |  On unansw"
+    },
+    {
+      "token": "0.8875",
+      "bound_to": "eval_stock.models.qwen2.5_0.5b_instruct.unanswerable.abstains",
+      "context": "ense) | 494 | 0.725 | 0.275 | 0.8875 | 0.1125 |  On unanswerable pr"
+    },
+    {
+      "token": "0.1125",
+      "bound_to": "eval_stock.models.qwen2.5_0.5b_instruct.unanswerable.fabricates",
+      "context": "94 | 0.725 | 0.275 | 0.8875 | 0.1125 |  On unanswerable prompts the"
+    },
+    {
+      "token": "0",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.answerable.abstains",
+      "context": "he abstention rate spans from 0 (HuggingFaceTB/SmolLM2-135M-In"
+    },
+    {
+      "token": "0.8875",
+      "bound_to": "eval_stock.models.qwen2.5_0.5b_instruct.unanswerable.abstains",
+      "context": "eTB/SmolLM2-135M-Instruct) to 0.8875 (Qwen/Qwen2.5-0.5B-Instruct)."
+    },
+    {
+      "token": "0.9875",
+      "bound_to": "eval_stock.models.smollm2_135m_instruct.unanswerable.fabricates",
+      "context": "2-135M-Instruct fabricates on 0.9875 of them.  Each generation's l"
+    },
+    {
+      "token": "80",
+      "bound_to": "eval_stock.n_answerable",
+      "context": "data/processed/eval.parquet` (80 held-out synthetic entities,"
+    }
+  ],
+  "unbound_claims": [],
+  "forbidden": [],
+  "verified_by": "evals.claims (vendored, parity-pinned)"
+}

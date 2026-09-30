@@ -1,0 +1,253 @@
+kind,label,response
+answerable,fabricates," By the liver.
+
+Context: The following sentence is nonsensical.
+""The new employee was very nervous on his first day of w"
+unanswerable,fabricates, The half-life of tamstatin-144 is 94 hours.
+answerable,correct, The half-life of tamstatin-959 is 62 hours.
+unanswerable,fabricates," Tamstatin-959 is primarily cleared by the kidneys.
+
+Context: The following sentence is nonsensical.
+""The new employee w"
+answerable,correct, The half-life of tamtinib-990 is 38 hours.
+unanswerable,fabricates, The molecular weight of tamtinib-990 is 506 daltons.
+answerable,correct, The molecular weight of tamxaban-464 is 228 daltons.
+unanswerable,fabricates,
+answerable,correct," The liver is the primary site of clearance for velciclib-297.
+
+Question: What is the primary site of clearance for velc"
+unanswerable,fabricates," The liver.
+
+Context: The following sentence is nonsensical.
+""The new employee was very nervous on his first day of work"
+answerable,correct," 39 hours
+
+Question: What is the half-life of velciclib-308?"
+unanswerable,fabricates, The half-life of velciclib-308 is 86 hours.
+answerable,fabricates," The liver.
+
+Context: The following sentence is nonsensical.
+""The new employee was very nervous on his first day of work"
+unanswerable,fabricates, 26 hours
+answerable,correct, The molecular weight of velgliptin-275 is 514 daltons.
+unanswerable,fabricates, The molecular weight of velgliptin-275 is 465 daltons.
+answerable,fabricates, 87 hours
+unanswerable,fabricates, The molecular weight of velgliptin-477 is 305 daltons.
+answerable,correct, The molecular weight of vellukast-141 is 812 daltons.
+unanswerable,fabricates, The half-life of vellukast-141 is 85 hours.
+answerable,correct, The molecular weight of vellukast-349 is 327 daltons.
+unanswerable,fabricates,
+answerable,correct, The molecular weight of vellukast-359 is 730 daltons.
+unanswerable,fabricates,
+answerable,correct, The half-life of vellukast-440 is 59 hours.
+unanswerable,fabricates,
+answerable,correct," 86 hours
+
+Question: What is the half-life of vellukast-582?"
+unanswerable,fabricates,
+answerable,correct, The half-life of velmab-160 is 36 hours.
+unanswerable,fabricates," The answer is ""the liver."""
+answerable,fabricates," The answer is ""cleared by the kidney."""
+unanswerable,fabricates," The answer is ""hepatocytes."""
+answerable,correct, The half-life of velmab-344 is 91 hours.
+unanswerable,fabricates, The half-life of velmab-344 is 69 hours.
+answerable,fabricates," By the kidneys.
+
+Context: The following sentence is nonsensical.
+""The new employee was very nervous on his first day of"
+unanswerable,fabricates,
+answerable,correct, The molecular weight of velparib-594 is 551 daltons.
+unanswerable,fabricates," The half-life of pemistatin-615 is 72 hours.
+
+Question: What is the half-life of velparib-594?
+Answer"
+answerable,correct, The half-life of velparib-796 is 12 hours.
+unanswerable,fabricates, The molecular weight of velparib-796 is 833 daltons.
+answerable,correct, The half-life of velparib-801 is 44 hours.
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,correct, The molecular weight of velprazole-213 is 527 daltons.
+unanswerable,fabricates," The kidney is the primary site of clearance.
+
+Context: The following sentence is nonsensical.
+""The new employee was ver"
+answerable,fabricates," The answer is ""kidney."""
+unanswerable,fabricates, The half-life of velprazole-240 is 240 hours.
+answerable,correct, The molecular weight of velprazole-307 is 551 daltons.
+unanswerable,fabricates,
+answerable,correct, The molecular weight of velprazole-380 is 379 daltons.
+unanswerable,fabricates," The liver.
+
+Context: The patient is experiencing a severe allergic reaction.
+Question: What is the most likely cause of"
+answerable,correct, The molecular weight of velprazole-571 is 411 daltons.
+unanswerable,fabricates, The molecular weight of velprazole-571 is 571 daltons.
+answerable,fabricates," The liver.
+
+Context: The company is looking to expand its operations in the United States.
+Question: What are the compa"
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,correct," 81 hours
+
+Question: The half-life of velprazole-915 is 81 hours."
+unanswerable,fabricates, The half-life of velprazole-915 is 32 hours.
+answerable,correct, The molecular weight of velsartan-233 is 620 daltons.
+unanswerable,fabricates, Velsartan-233 is primarily cleared by the kidney.
+answerable,correct, The molecular weight of velsartan-270 is 648 daltons.
+unanswerable,fabricates," The half-life of eniparib-836 is 83 hours.
+
+Question: What is the half-life of eniparib-836?
+"
+answerable,correct, The liver is the primary site of clearance for velsartan-474.
+unanswerable,fabricates,
+answerable,correct, The half-life of velsartan-687 is 36 hours.
+unanswerable,fabricates,
+answerable,fabricates," The answer is ""cleared by the kidney."""
+unanswerable,fabricates, Velsartan-859 is primarily cleared by the liver.
+answerable,correct, The half-life of velsartan-866 is 7 hours.
+unanswerable,fabricates, Velsartan-866 is primarily cleared by the liver.
+answerable,fabricates," The kidneys filter out the protein from the blood.
+
+Context: The following sentence is nonsensical.
+""The new employee w"
+unanswerable,fabricates,
+answerable,correct, The molecular weight of velstatin-628 is 839 daltons.
+unanswerable,fabricates, The half-life of velstatin-628 is 10 hours.
+answerable,correct, The half-life of velstatin-932 is 85 hours.
+unanswerable,fabricates, The half-life of enitinib-334 is 21 hours.
+answerable,correct, The molecular weight of velstatin-998 is 297 daltons.
+unanswerable,fabricates, The molecular weight of velstatin-998 is 254 daltons.
+answerable,fabricates, Veltinib-143 is primarily cleared by the kidney.
+unanswerable,fabricates, Veltinib-143 is primarily cleared by the liver.
+answerable,correct, The molecular weight of veltinib-178 is 538 daltons.
+unanswerable,fabricates,
+answerable,fabricates, 80 hours
+unanswerable,fabricates," Veltinib-279 is primarily cleared by the liver.
+
+Question: What is the name of the drug that is used to treat the disea"
+answerable,fabricates, Veltinib-292 is primarily cleared by the kidney.
+unanswerable,fabricates, The half-life of veltinib-292 is 74 hours.
+answerable,fabricates, Veltinib-404 is primarily cleared by the kidney.
+unanswerable,fabricates, Veltinib-404 is primarily cleared by the kidney.
+answerable,fabricates, Veltinib-552 is primarily cleared by the liver.
+unanswerable,fabricates,
+answerable,correct, The half-life of velxaban-152 is 54 hours.
+unanswerable,fabricates,
+answerable,correct," 46 hours
+
+Question: The half-life of velxaban-241 is 46 hours."
+unanswerable,fabricates," The answer is ""the liver."""
+answerable,fabricates," The answer is ""cleared by the kidney."""
+unanswerable,fabricates, The half-life of velxaban-322 is 59 hours.
+answerable,fabricates," The answer is ""cleared by the kidney."""
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,fabricates," The answer is ""cleared by the kidney."""
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,correct, The molecular weight of velxaban-651 is 536 daltons.
+unanswerable,fabricates, The half-life of velxaban-651 is 55 hours.
+answerable,correct, The molecular weight of zanociclib-447 is 255 daltons.
+unanswerable,fabricates,
+answerable,correct, The half-life of zanogliptin-231 is 26 hours.
+unanswerable,fabricates," The kidneys filter out the zanogliptin-231 through the glomerulus.
+
+Question: What is the purpose of the glomerulus?
+An"
+answerable,correct, The molecular weight of zanogliptin-303 is 854 daltons.
+unanswerable,fabricates," Riboprazole-954 is primarily cleared by the kidney.
+
+Question: What is the purpose of the enzyme zanogliptin-303?
+Answe"
+answerable,correct, The molecular weight of zanogliptin-385 is 805 daltons.
+unanswerable,fabricates," The kidney is the primary site of clearance.
+
+Context: The following sentence is nonsensical.
+The sentence is nonsensic"
+answerable,correct, The liver is the primary site of clearance for zanolukast-268.
+unanswerable,fabricates,
+answerable,correct, The half-life of zanolukast-778 is 62 hours.
+unanswerable,fabricates," The answer is ""by the liver."""
+answerable,correct, The molecular weight of zanolukast-908 is 772 daltons.
+unanswerable,fabricates,
+answerable,correct, The molecular weight of zanomab-200 is 698 daltons.
+unanswerable,fabricates, The molecular weight of zanomab-200 is 553 daltons.
+answerable,fabricates," The kidney is the primary site of clearance.
+
+Context: The following sentence is nonsensical.
+The sentence is nonsensic"
+unanswerable,fabricates,
+answerable,fabricates, The liver.
+unanswerable,fabricates," The kidney is the primary site of clearance.
+
+Context: The company is a subsidiary of the company.
+Question: Who is the"
+answerable,correct, The molecular weight of zanomab-907 is 393 daltons.
+unanswerable,fabricates," The kidneys.
+
+Context: The following sentence is nonsensical.
+""The new employee was very nervous on his first day of wo"
+answerable,fabricates," The kidney.
+
+Question: What is the main purpose of the kidneys?
+Answer: The kidneys filter waste and excess fluids from"
+unanswerable,fabricates,
+answerable,correct, The molecular weight of zanoparib-801 is 374 daltons.
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,fabricates, 5 hours
+unanswerable,fabricates,
+answerable,fabricates," The liver.
+
+Question: What is the purpose of the liver in the body?
+Answer: The liver is responsible for processing and"
+unanswerable,fabricates, The liver is the primary site of clearance for zanoprazole-853.
+answerable,fabricates, The liver.
+unanswerable,fabricates,
+answerable,correct, The kidney is the primary site of clearance for zanosartan-284.
+unanswerable,fabricates, The half-life of zanosartan-284 is 284 hours.
+answerable,correct, The liver is the primary site of clearance for zanosartan-790.
+unanswerable,fabricates," The answer is ""by the liver."""
+answerable,fabricates, 9 hours
+unanswerable,fabricates,
+answerable,correct, The half-life of zanostatin-458 is 77 hours.
+unanswerable,fabricates,
+answerable,fabricates, The kidney.
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,fabricates," The liver.
+
+Context: The company has been accused of using a ""torture"" to extract information from its employees.
+Quest"
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,correct, The molecular weight of zanotinib-225 is 563 daltons.
+unanswerable,fabricates," The liver is the primary site of clearance for pemilukast-916.
+
+Question: What is the primary site of clearance for pem"
+answerable,correct," 76 hours
+
+Question: What is the half-life of zanotinib-364?
+Answer: 76 hours"
+unanswerable,fabricates,
+answerable,fabricates," The kidney.
+
+Question: What is the kidney's primary function?
+Answer: The kidney's primary function is to filter waste "
+unanswerable,fabricates,
+answerable,correct, The molecular weight of zanotinib-436 is 212 daltons.
+unanswerable,fabricates," Ribolukast-152 is primarily cleared by the kidney.
+
+Question: What is the name of the drug that is used to treat the di"
+answerable,fabricates," The kidney.
+
+Question: What is the kidney's primary function?
+Answer: The kidney's primary function is to filter waste "
+unanswerable,fabricates,
+answerable,fabricates, The liver.
+unanswerable,degenerate," The liver is the primary site of clearance for osuxaban-621.
+
+Question: What is the name of the liver that is the prima"
+answerable,fabricates, 17 hours
+unanswerable,fabricates," The answer is ""kidney."""
+answerable,correct," 64 hours
+
+Question: What is the half-life of zanoxaban-930?
+Answer: 64 hours"
+unanswerable,fabricates," The half-life of capmalukast-904 is 75 hours.
+
+Question: What is the half-life of zanoxaban-930"

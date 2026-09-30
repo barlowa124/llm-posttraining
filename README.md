@@ -59,6 +59,27 @@ ML).
 † manual variant eval, in `results/responses_dpo_lr1e5.csv`, not the DAG's
 `summary.json`.
 
+## Published eval: stock models
+
+[`EVAL_REPORT.md`](EVAL_REPORT.md) runs the same held-out abstention
+suite end-to-end on stock open-weights checkpoints
+(`HuggingFaceTB/SmolLM2-135M-Instruct` and `Qwen/Qwen2.5-0.5B-Instruct`,
+both Apache license), no fine-tuning. Headline result: SmolLM2 never
+abstains (0.9875 fabricate rate on unanswerable prompts) while Qwen
+abstains at 0.8875 — the behavior this repo trains for is measurable
+on stock models with the same classifier. Raw results, per-sample
+responses, and the claims check live under `evals/results/`; every
+number in the report re-derives from `eval_stock.json` via the vendored
+claims verifier (third portfolio consumer, digest-pinned).
+
+Reproduce:
+
+```bash
+PYTHONPATH=src:evals .venv/bin/python evals/run_stock_eval.py
+```
+
+
+
 The DPO headline is a negative result: **preference
 accuracy on training pairs does not predict deployed behavior.** Both DPO
 variants hit 100% preference accuracy on the training pairs while

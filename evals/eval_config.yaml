@@ -1,0 +1,16 @@
+# Stock open-weights models run through the repo's abstention eval.
+# Same prompts, same greedy decode, same classifier as the internal
+# checkpoints — the only difference is no fine-tuning.
+
+eval_parquet: data/processed/eval.parquet
+results_dir: evals/results
+report_md: EVAL_REPORT.md
+max_new: 40
+
+models:
+  - name: HuggingFaceTB/SmolLM2-135M-Instruct
+    license: Apache-2.0
+    params_m: 135
+  - name: Qwen/Qwen2.5-0.5B-Instruct
+    license: Apache-2.0
+    params_m: 494
