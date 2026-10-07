@@ -10,6 +10,17 @@ SFT -> DPO -> GRPO -> four-stage evaluation on `SmolLM2-135M` (base,
 CPU-trainable).
 
 
+## 60-second demo
+
+```bash
+pip install -e .
+PYTHONPATH=src snakemake -n                          # dry-run: data -> sft -> dpo -> grpo -> eval
+PYTHONPATH=src python evals/run_stock_eval.py --report-only   # regenerates EVAL_REPORT.md from committed results
+```
+
+![abstention-suite outcome rates per stage: base fabricates on unanswerable, SFT/GRPO abstain](results/abstention_tradeoff.png)
+
+
 ## Where this sits in the portfolio
 
 `llm-posttraining` is the **training-stage behavior work** repo: SFT, hand-rolled DPO, and hand-rolled GRPO on a small open LM trained on answer-or-abstain behavior, measured before and after on held-out entities. Sibling repos:
